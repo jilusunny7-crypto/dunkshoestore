@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DUNK Admin — Shoe Inventory & Stock Manager</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Google Fonts: Syne & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            ash: {
+              50: '#f6f7f6',
+              100: '#eceeec',
+              200: '#d9ddd9',
+              300: '#b8c0b8',
+              400: '#919d91',
+              500: '#717e71',
+              600: '#586458',
+              700: '#465046',
+              800: '#2b2e2b',
+              900: '#1a1c1a',
+              950: '#121312',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['Syne', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Dark Ash Scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #121312; }
+    ::-webkit-scrollbar-thumb { background: #2a2c2a; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3c403c; }
+
+    /* Glass Panels */
+    .admin-card {
+      background: #181918;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1rem;
+    }
+    .admin-card:hover {
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+    .pill-active {
+      background: #ffffff !important;
+      color: #121312 !important;
+      font-weight: 800;
+    }
+  </style>
+</head>
+
+<body class="bg-[#121312] text-ash-100 font-sans min-h-screen flex flex-col antialiased selection:bg-white selection:text-black">
+
+  <!-- TOP ADMIN BAR -->
+  <header class="sticky top-0 z-40 bg-[#161716]/90 backdrop-blur-xl border-b border-white/10 px-4 sm:px-8 py-3.5 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-white text-ash-950 font-display font-black text-xl flex items-center justify-center shadow-lg">
+        D
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <h1 class="font-display font-extrabold text-lg text-white tracking-tight">DUNK & WOKE</h1>
+          <span class="text-[10px] font-black uppercase tracking-wider bg-white/10 text-emerald-400 border border-emerald-400/30 px-2 py-0.5 rounded-full flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Inventory Engine
+          </span>
+        </div>
+        <p class="text-xs text-ash-400">Stock & Price Manager • Koduvally, Calicut</p>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <a 
+        href="index.html" 
+        target="_blank" 
+        class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-2 rounded-xl bg-white/8 hover:bg-white/15 text-white border border-white/10 transition"
+        title="Open Customer Storefront in new tab"
+      >
+        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        <span class="hidden sm:inline">View Store</span>
+      </a>
+
+      <button 
+        onclick="exportBackupJson()" 
+        class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-2 rounded-xl bg-white/8 hover:bg-white/15 text-ash-300 hover:text-white border border-white/10 transition"
+        title="Download catalog JSON backup"
+      >
+        <i data-lucide="download" class="w-3.5 h-3.5"></i>
+        <span class="hidden md:inline">Backup</span>
+      </button>
+
+      <button 
+        onclick="openAddShoeModal()" 
+        class="inline-flex items-center gap-2 text-xs sm:text-sm font-extrabold px-4 py-2 rounded-xl bg-white hover:bg-ash-100 text-ash-950 transition shadow-lg active:scale-95"
+      >
+        <i data-lucide="plus" class="w-4 h-4"></i>
+        <span>Add Shoe</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-6">
+
+    <!-- KPI STATS CARDS -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <!-- Total Catalog -->
+      <div class="admin-card p-4 sm:p-5 flex items-center justify-between">
+        <div>
+          <p class="text-xs font-medium text-ash-400 mb-1">Total Catalog</p>
+          <h3 id="statTotal" class="text-2xl sm:text-3xl font-extrabold text-white">0</h3>
+          <p class="text-[11px] text-ash-400 mt-1">Sneakers & Footwear</p>
+        </div>
+        <div class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white">
+          <i data-lucide="package" class="w-5 h-5"></i>
+        </div>
+      </div>
+
+      <!-- In Stock -->
+      <div class="admin-card p-4 sm:p-5 flex items-center justify-between">
+        <div>
+          <p class="text-xs font-medium text-ash-400 mb-1">In Stock</p>
+          <h3 id="statInStock" class="text-2xl sm:text-3xl font-extrabold text-emerald-400">0</h3>
+          <p class="text-[11px] text-emerald-400/80 mt-1">Ready for Dispatch</p>
+        </div>
+        <div class="w-11 h-11 rounded-xl bg-emerald-400/10 border border-emerald-400/20 flex items-center justify-center text-emerald-400">
+          <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+        </div>
+      </div>
+
+      <!-- Sold Out -->
+      <div class="admin-card p-4 sm:p-5 flex items-center justify-between">
+        <div>
+          <p class="text-xs font-medium text-ash-400 mb-1">Sold Out / Out</p>
+          <h3 id="statSoldOut" class="text-2xl sm:text-3xl font-extrabold text-rose-400">0</h3>
+          <p class="text-[11px] text-rose-400/80 mt-1">Need Restock</p>
+        </div>
+        <div class="w-11 h-11 rounded-xl bg-rose-400/10 border border-rose-400/20 flex items-center justify-center text-rose-400">
+          <i data-lucide="alert-circle" class="w-5 h-5"></i>
+        </div>
+      </div>
+
+      <!-- Physical Store Stock -->
+      <div class="admin-card p-4 sm:p-5 flex items-center justify-between">
+        <div>
+          <p class="text-xs font-medium text-ash-400 mb-1">Koduvally In-Store</p>
+          <h3 id="statInStore" class="text-2xl sm:text-3xl font-extrabold text-amber-300">0</h3>
+          <p class="text-[11px] text-amber-300/80 mt-1">Store Display Stock</p>
+        </div>
+        <div class="w-11 h-11 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-300">
+          <i data-lucide="store" class="w-5 h-5"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILTER & SEARCH BAR -->
+    <div class="admin-card p-4 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+      <!-- Search -->
+      <div class="relative flex-1">
+        <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-ash-400"></i>
+        <input 
+          type="text" 
+          id="adminSearchInput"
+          placeholder="Search shoes by name, category, or color..."
+          oninput="handleSearch(this.value)"
+          class="w-full pl-10 pr-4 py-2.5 bg-[#121312] border border-white/10 rounded-xl text-sm text-white placeholder-ash-500 focus:outline-hidden focus:border-white/30 transition"
+        >
+      </div>
+
+      <!-- Filter Pills -->
+      <div class="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none">
+        <button onclick="setFilter('all')" data-filter="all" class="admin-filter-pill pill-active px-3.5 py-2 rounded-xl text-xs font-bold border border-white/10 transition whitespace-nowrap bg-white/5 text-ash-300 hover:text-white">
+          All Shoes
+        </button>
+        <button onclick="setFilter('in-stock')" data-filter="in-stock" class="admin-filter-pill px-3.5 py-2 rounded-xl text-xs font-bold border border-white/10 transition whitespace-nowrap bg-white/5 text-ash-300 hover:text-white">
+          In Stock Only
+        </button>
+        <button onclick="setFilter('sold-out')" data-filter="sold-out" class="admin-filter-pill px-3.5 py-2 rounded-xl text-xs font-bold border border-white/10 transition whitespace-nowrap bg-white/5 text-ash-300 hover:text-white">
+          Sold Out
+        </button>
+        <button onclick="setFilter('sneakers')" data-filter="sneakers" class="admin-filter-pill px-3.5 py-2 rounded-xl text-xs font-bold border border-white/10 transition whitespace-nowrap bg-white/5 text-ash-300 hover:text-white">
+          Sneakers
+        </button>
+        <button onclick="setFilter('formals')" data-filter="formals" class="admin-filter-pill px-3.5 py-2 rounded-xl text-xs font-bold border border-white/10 transition whitespace-nowrap bg-white/5 text-ash-300 hover:text-white">
+          Formals
+        </button>
+        <button onclick="setFilter('sandals')" data-filter="sandals" class="admin-filter-pill px-3.5 py-2 rounded-xl text-xs font-bold border border-white/10 transition whitespace-nowrap bg-white/5 text-ash-300 hover:text-white">
+          Sandals
+        </button>
+        <button onclick="setFilter('women')" data-filter="women" class="admin-filter-pill px-3.5 py-2 rounded-xl text-xs font-bold border border-white/10 transition whitespace-nowrap bg-white/5 text-ash-300 hover:text-white">
+          Women
+        </button>
+      </div>
+
+      <!-- View Switcher -->
+      <div class="flex items-center gap-1 bg-[#121312] p-1 rounded-xl border border-white/10 self-end md:self-auto">
+        <button id="btnViewTable" onclick="setViewMode('table')" class="p-1.5 rounded-lg bg-white/15 text-white transition" title="Table View">
+          <i data-lucide="list" class="w-4 h-4"></i>
+        </button>
+        <button id="btnViewGrid" onclick="setViewMode('grid')" class="p-1.5 rounded-lg text-ash-400 hover:text-white transition" title="Grid Card View">
+          <i data-lucide="grid" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- INVENTORY CONTENT AREA -->
+    <div id="inventoryContainer" class="space-y-4">
+      <!-- Will be populated dynamically by admin.js -->
+    </div>
+
+  </main>
+
+  <!-- ADD / EDIT SNEAKER MODAL -->
+  <div id="shoeModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-[#181918] border border-white/15 rounded-2xl w-full max-w-2xl my-8 overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-200">
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-[#161716]">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white">
+            <i data-lucide="tag" class="w-4 h-4"></i>
+          </div>
+          <h2 id="modalTitle" class="text-lg font-bold text-white">Add New Sneaker</h2>
+        </div>
+        <button onclick="closeShoeModal()" class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 text-ash-300 hover:text-white flex items-center justify-center transition">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Modal Form -->
+      <form id="shoeForm" onsubmit="handleSaveShoe(event)" class="p-6 space-y-4 max-h-[75vh] overflow-y-auto">
+        <input type="hidden" id="shoeFormId">
+
+        <!-- Name & Category -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="sm:col-span-2">
+            <label class="block text-xs font-bold text-ash-300 mb-1 uppercase tracking-wider">Shoe Model Name *</label>
+            <input 
+              type="text" 
+              id="formName" 
+              required
+              placeholder="e.g. Nike Air Force 1 '07 Triple White"
+              class="w-full px-3.5 py-2.5 bg-[#121312] border border-white/10 rounded-xl text-sm text-white focus:outline-hidden focus:border-white/40"
+            >
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-ash-300 mb-1 uppercase tracking-wider">Category *</label>
+            <select 
+              id="formCategory" 
+              class="w-full px-3.5 py-2.5 bg-[#121312] border border-white/10 rounded-xl text-sm text-white focus:outline-hidden focus:border-white/40"
+            >
+              <option value="sneakers">Sneakers</option>
+              <option value="formals">Formals</option>
+              <option value="sandals">Sandals</option>
+              <option value="women">Women</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Prices & Stock Quantity -->
+        <div class="grid grid-cols-3 gap-3 sm:gap-4">
+          <div>
+            <label class="block text-xs font-bold text-ash-300 mb-1 uppercase tracking-wider">Selling Price (₹) *</label>
+            <input 
+              type="number" 
+              id="formPrice" 
+              required
+              min="1"
+              placeholder="2999"
+              class="w-full px-3.5 py-2.5 bg-[#121312] border border-white/10 rounded-xl text-sm text-white focus:outline-hidden focus:border-white/40 font-bold"
+            >
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-ash-300 mb-1 uppercase tracking-wider">Original Price (₹) *</label>
+            <input 
+              type="number" 
+              id="formOriginalPrice" 
+              required
+              min="1"
+              placeholder="3999"
+              class="w-full px-3.5 py-2.5 bg-[#121312] border border-white/10 rounded-xl text-sm text-white focus:outline-hidden focus:border-white/40"
+            >
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-ash-300 mb-1 uppercase tracking-wider">Stock Qty</label>
+            <input 
+              type="number" 
+              id="formStockQuantity" 
+              min="0"
+              value="5"
+              class="w-full px-3.5 py-2.5 bg-[#121312] border border-white/10 rounded-xl text-sm text-white focus:outline-hidden focus:border-white/40"
+            >
+          </div>
+        </div>
+
+        <!-- Stock Status & Flags -->
+        <div class="p-3 bg-[#121312] rounded-xl border border-white/10 flex flex-wrap items-center justify-between gap-4">
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" id="formInStock" checked class="w-4 h-4 rounded text-white accent-white">
+            <span class="text-sm font-bold text-white">In Stock (Available to Order)</span>
+          </label>
+
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" id="formIsAvailableStock" class="w-4 h-4 rounded text-white accent-white">
+            <span class="text-sm font-semibold text-ash-300">Physical Koduvally Store Stock Badge</span>
+          </label>
+        </div>
+
+        <!-- Available Sizes -->
+        <div>
+          <label class="block text-xs font-bold text-ash-300 mb-1.5 uppercase tracking-wider">Available Sizes (UK)</label>
+          <div class="flex flex-wrap gap-2" id="formSizesContainer">
+            <!-- Dynamically checkable sizes: 4, 5, 6, 7, 8, 9, 10, 11 -->
+            <label class="size-checkbox cursor-pointer px-3 py-1.5 rounded-lg border border-white/15 bg-white/5 hover:border-white/30 text-xs font-bold text-white flex items-center gap-1.5">
+              <input type="checkbox" value="4" class="accent-white size-opt"> UK 4
+            </label>
+            <label class="size-checkbox cursor-pointer px-3 py-1.5 rounded-lg border border-white/15 bg-white/5 hover:border-white/30 text-xs font-bold text-white flex items-center gap-1.5">
+              <input type="checkbox" value="5" class="accent-white size-opt"> UK 5
+            </label>
+            <label class="size-checkbox cursor-pointer px-3 py-1.5 rounded-lg border border-white/15 bg-white/5 hover:border-white/30 text-xs font-bold text-white flex items-center gap-1.5">
+              <input type="checkbox" value="6" class="accent-white size-opt"> UK 6
+            </label>
+            <label class="size-checkbox cursor-pointer px-3 py-1.5 rounded-lg border border-white/15 bg-white/5 hover:border-white/30 text-xs font-bold text-white flex items-center gap-1.5">
+              <input type="checkbox" value="7" class="accent-white size-opt"> UK 7
+            </label>
+            <label class="size-checkbox cursor-pointer px-3 py-1.5 rounded-lg border border-white/15 bg-white/5 hover:border-white/30 text-xs font-bold text-white flex items-center gap-1.5">
+              <input type="checkbox" value="8" class="accent-white size-opt"> UK 8
+            </label>
+            <label class="size-checkbox cursor-pointer px-3 py-1.5 rounded-lg border border-white/15 bg-white/5 hover:border-white/30 text-xs font-bold text-white flex items-center gap-1.5">
+              <input type="checkbox" value="9" class="accent-white size-opt"> UK 9
+            </label>
+            <label class="size-checkbox cursor-pointer px-3 py-1.5 rounded-lg border border-white/15 bg-white/5 hover:border-white/30 text-xs font-bold text-white flex items-center gap-1.5">
+              <input type="checkbox" value="10" class="accent-white size-opt"> UK 10
+            </label>
+            <label class="size-checkbox cursor-pointer px-3 py-1.5 rounded-lg border border-white/15 bg-white/5 hover:border-white/30 text-xs font-bold text-white flex items-center gap-1.5">
+              <input type="checkbox" value="11" class="accent-white size-opt"> UK 11
+            </label>
+          </div>
+        </div>
+
+        <!-- Image URL -->
+        <div>
+          <label class="block text-xs font-bold text-ash-300 mb-1 uppercase tracking-wider">Image Path or URL *</label>
+          <div class="flex gap-2">
+            <input 
+              type="text" 
+              id="formImage" 
+              required
+              placeholder="assets/images/stock/... or https://..."
+              class="flex-1 px-3.5 py-2.5 bg-[#121312] border border-white/10 rounded-xl text-sm text-white focus:outline-hidden focus:border-white/40"
+              oninput="previewModalImage(this.value)"
+            >
+            <div id="imgPreviewWrapper" class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 overflow-hidden flex items-center justify-center">
+              <i data-lucide="image" class="w-4 h-4 text-ash-500"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badge & Color Info -->
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-ash-300 mb-1 uppercase tracking-wider">Badge Tag</label>
+            <input 
+              type="text" 
+              id="formBadge" 
+              placeholder="In Stock Now / Trending / 25% OFF"
+              class="w-full px-3.5 py-2.5 bg-[#121312] border border-white/10 rounded-xl text-sm text-white focus:outline-hidden focus:border-white/40"
+            >
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-ash-300 mb-1 uppercase tracking-wider">Colorway Label</label>
+            <input 
+              type="text" 
+              id="formColorsCount" 
+              placeholder="e.g. White / Emerald Green"
+              class="w-full px-3.5 py-2.5 bg-[#121312] border border-white/10 rounded-xl text-sm text-white focus:outline-hidden focus:border-white/40"
+            >
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div>
+          <label class="block text-xs font-bold text-ash-300 mb-1 uppercase tracking-wider">Product Description</label>
+          <textarea 
+            id="formDescription" 
+            rows="3" 
+            placeholder="Detailed shoe features, materials, and pickup details..."
+            class="w-full px-3.5 py-2.5 bg-[#121312] border border-white/10 rounded-xl text-sm text-white focus:outline-hidden focus:border-white/40"
+          ></textarea>
+        </div>
+
+        <!-- Form Buttons -->
+        <div class="pt-3 border-t border-white/10 flex items-center justify-end gap-3">
+          <button 
+            type="button" 
+            onclick="closeShoeModal()" 
+            class="px-4 py-2.5 rounded-xl border border-white/15 text-ash-300 hover:text-white hover:bg-white/5 text-sm font-bold transition"
+          >
+            Cancel
+          </button>
+          <button 
+            type="submit" 
+            class="px-6 py-2.5 rounded-xl bg-white hover:bg-ash-100 text-ash-950 text-sm font-extrabold transition shadow-lg flex items-center gap-2"
+          >
+            <i data-lucide="check" class="w-4 h-4"></i>
+            <span>Save Product</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 bg-[#161716] border border-white/20 px-4 py-3 rounded-xl shadow-2xl text-white text-sm font-bold">
+    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
+    <span id="toastMsg">Changes saved</span>
+  </div>
+
+  <!-- Admin JS Engine -->
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
