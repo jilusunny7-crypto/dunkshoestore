@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nike Sneaker Cursor Test</title>
+  <style>
+    * {
+      cursor: url('assets/images/nike-cursor.png') 3 4, auto;
+    }
+    button, a, .clickable {
+      cursor: url('assets/images/nike-cursor-pointer.png') 3 4, pointer !important;
+    }
+    body {
+      background: #18181b;
+      color: white;
+      font-family: sans-serif;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    .container {
+      display: flex;
+      gap: 30px;
+    }
+    .box-white {
+      background: #ffffff;
+      color: #18181b;
+      width: 320px;
+      height: 220px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .box-dark {
+      background: #27272a;
+      color: #ffffff;
+      width: 320px;
+      height: 220px;
+      border-radius: 16px;
+      border: 1px solid #3f3f46;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+      text-align: center;
+    }
+    .btn {
+      background: #18181b;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 9999px;
+      border: 1px solid #3f3f46;
+      font-weight: bold;
+    }
+    .btn-green {
+      background: #10b981;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 9999px;
+      border: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>👟 Angled Nike Sneaker Cursor Test</h2>
+  <p>Move mouse over both areas and buttons to test default and pointer states:</p>
+  <div class="container">
+    <div class="box-white">
+      <h3>White Background</h3>
+      <p>Hover sneaker over white cards</p>
+      <button class="btn">Hover Me (Pointer Sneaker)</button>
+    </div>
+    <div class="box-dark">
+      <h3>Ash Dark Background</h3>
+      <p>Hover sneaker over dark hero</p>
+      <button class="btn-green">Hover Me (WhatsApp Button)</button>
+    </div>
+  </div>
+</body>
+</html>
