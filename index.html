@@ -347,55 +347,67 @@
         <!-- CENTER STAGE: 3D SNEAKER CANVAS & TRANSFORM WRAPPER -->
         <div class="relative z-10 flex-1 w-full max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-center pointer-events-none">
           
-          <!-- LEFT FLOATING TECH HUD CARD -->
-          <div id="heroProductHUD" class="absolute left-4 sm:left-8 lg:left-12 top-1/2 -translate-y-1/2 z-30 max-w-[270px] sm:max-w-xs pointer-events-auto transition-all duration-500">
-            <div class="bg-[#161716]/90 backdrop-blur-xl p-4 sm:p-5 rounded-3xl border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
-              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/15 text-white border border-white/25 text-[10px] font-black uppercase tracking-wider mb-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
-                NEW IN STORE • CALICUT
-              </span>
-              <h2 id="heroShoeTitle" class="text-2xl sm:text-3xl font-black font-display text-white leading-tight">
-                Salomon XT-6
-              </h2>
-              <div id="heroShoeSubtitle" class="text-xs sm:text-sm font-bold text-ash-300 mb-2">
-                Advanced Trail • ACS Chassis
-              </div>
-              <div id="heroShoePrice" class="text-xl sm:text-2xl font-black text-white mb-3">
-                ₹3,499 <span class="text-xs text-ash-400 line-through font-normal">₹5,499</span>
-              </div>
+          <!-- LEFT FLOATING TECH HUD CARD (RESPONSIVE: DOCKED COMPACT ON MOBILE, FLOATING ON DESKTOP) -->
+          <div id="heroProductHUD" class="absolute left-3 right-3 bottom-14 sm:bottom-auto sm:right-auto sm:left-8 lg:left-12 sm:top-1/2 sm:-translate-y-1/2 z-30 max-w-sm sm:max-w-xs mx-auto sm:mx-0 pointer-events-auto transition-all duration-300">
+            <div class="bg-[#161716]/95 backdrop-blur-2xl p-3 sm:p-5 rounded-2xl sm:rounded-3xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+              
+              <!-- Row 1: Badge, Title & Price (Compact Side-by-Side on Mobile, Stacked on Desktop) -->
+              <div class="flex items-start justify-between gap-2.5 mb-2 sm:mb-3">
+                <div class="min-w-0 flex-1">
+                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/15 text-white border border-white/25 text-[9px] sm:text-[10px] font-black uppercase tracking-wider mb-1 sm:mb-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                    NEW IN STORE • CALICUT
+                  </span>
+                  <h2 id="heroShoeTitle" class="text-base sm:text-3xl font-black font-display text-white leading-tight truncate sm:whitespace-normal">
+                    Salomon XT-6
+                  </h2>
+                  <div id="heroShoeSubtitle" class="text-[11px] sm:text-xs font-bold text-ash-300 truncate sm:whitespace-normal">
+                    Advanced Trail • ACS Chassis
+                  </div>
+                </div>
 
-              <!-- Colorway / Model Selector Dots -->
-              <div class="mb-3">
-                <div class="text-[9px] uppercase font-bold text-ash-400 tracking-wider mb-1.5">Featured Models</div>
-                <div class="flex items-center gap-2">
-                  <button type="button" onclick="switchHeroShoe('salomon-xt6')" class="w-6 h-6 rounded-full bg-[#1e201e] border-2 border-white shadow-md ring-2 ring-white/60 transition hover:scale-110" title="Salomon XT-6 (Stealth Black)"></button>
-                  <button type="button" onclick="switchHeroShoe('air-force-1')" class="w-6 h-6 rounded-full bg-white border-2 border-ash-400 transition hover:scale-110" title="Nike Air Force 1 Low (Triple White)"></button>
-                  <button type="button" onclick="switchHeroShoe('puma-palermo')" class="w-6 h-6 rounded-full bg-[#001f3f] border-2 border-amber-500 transition hover:scale-110" title="Puma Palermo (Suede Classic)"></button>
+                <div class="text-right shrink-0">
+                  <div id="heroShoePrice" class="text-base sm:text-2xl font-black text-white whitespace-nowrap">
+                    ₹3,499 <span class="text-[11px] sm:text-xs text-ash-400 line-through font-normal block sm:inline">₹5,499</span>
+                  </div>
                 </div>
               </div>
 
-              <!-- Size Selector Pills -->
-              <div class="mb-4">
-                <div class="flex items-center justify-between text-[9px] uppercase font-bold text-ash-400 tracking-wider mb-1.5">
-                  <span>Select UK Size</span>
-                  <button type="button" onclick="openSizeGuideModal()" class="text-ash-300 hover:text-white underline lowercase">size guide</button>
+              <!-- Row 2: Models & Sizes (Compact Side-by-Side on Mobile, Stacked on Desktop) -->
+              <div class="flex flex-row items-center justify-between sm:flex-col sm:items-stretch gap-2 mb-2 sm:mb-4 pt-1.5 sm:pt-0 border-t border-white/10 sm:border-0">
+                <!-- Colorway / Model Selector Dots -->
+                <div class="flex items-center gap-1.5 sm:mb-3">
+                  <span class="hidden sm:block text-[9px] uppercase font-bold text-ash-400 tracking-wider mb-1">Featured Models</span>
+                  <div class="flex items-center gap-1.5 sm:gap-2">
+                    <button type="button" onclick="switchHeroShoe('salomon-xt6')" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#1e201e] border-2 border-white shadow-md ring-2 ring-white/60 transition hover:scale-110" title="Salomon XT-6 (Stealth Black)"></button>
+                    <button type="button" onclick="switchHeroShoe('air-force-1')" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white border-2 border-ash-400 transition hover:scale-110" title="Nike Air Force 1 Low (Triple White)"></button>
+                    <button type="button" onclick="switchHeroShoe('puma-palermo')" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#001f3f] border-2 border-amber-500 transition hover:scale-110" title="Puma Palermo (Suede Classic)"></button>
+                  </div>
                 </div>
-                <div id="heroSizePills" class="flex flex-wrap gap-1">
-                  <button type="button" onclick="selectHeroSize(this, '7')" class="hero-size-btn px-2 py-0.5 rounded-lg text-xs font-bold border border-white/15 bg-white/5 hover:bg-white hover:text-black transition">7</button>
-                  <button type="button" onclick="selectHeroSize(this, '8')" class="hero-size-btn active px-2 py-0.5 rounded-lg text-xs font-bold border border-white bg-white text-black transition shadow-sm">8</button>
-                  <button type="button" onclick="selectHeroSize(this, '9')" class="hero-size-btn px-2 py-0.5 rounded-lg text-xs font-bold border border-white/15 bg-white/5 hover:bg-white hover:text-black transition">9</button>
-                  <button type="button" onclick="selectHeroSize(this, '10')" class="hero-size-btn px-2 py-0.5 rounded-lg text-xs font-bold border border-white/15 bg-white/5 hover:bg-white hover:text-black transition">10</button>
+
+                <!-- Size Selector Pills -->
+                <div class="flex items-center gap-1">
+                  <div class="hidden sm:flex items-center justify-between text-[9px] uppercase font-bold text-ash-400 tracking-wider mb-1.5">
+                    <span>Select UK Size</span>
+                    <button type="button" onclick="openSizeGuideModal()" class="text-ash-300 hover:text-white underline lowercase">size guide</button>
+                  </div>
+                  <div id="heroSizePills" class="flex items-center gap-1">
+                    <button type="button" onclick="selectHeroSize(this, '7')" class="hero-size-btn px-2 py-0.5 rounded-lg text-[11px] sm:text-xs font-bold border border-white/15 bg-white/5 hover:bg-white hover:text-black transition">7</button>
+                    <button type="button" onclick="selectHeroSize(this, '8')" class="hero-size-btn active px-2 py-0.5 rounded-lg text-[11px] sm:text-xs font-bold border border-white bg-white text-black transition shadow-sm">8</button>
+                    <button type="button" onclick="selectHeroSize(this, '9')" class="hero-size-btn px-2 py-0.5 rounded-lg text-[11px] sm:text-xs font-bold border border-white/15 bg-white/5 hover:bg-white hover:text-black transition">9</button>
+                    <button type="button" onclick="selectHeroSize(this, '10')" class="hero-size-btn px-2 py-0.5 rounded-lg text-[11px] sm:text-xs font-bold border border-white/15 bg-white/5 hover:bg-white hover:text-black transition">10</button>
+                  </div>
                 </div>
               </div>
 
-              <!-- Action CTA: Buy on WhatsApp + Replay Launch -->
+              <!-- Row 3: Action Buttons (BUY NOW + Sparkles Launch) -->
               <div class="flex items-center gap-2">
                 <a 
                   id="heroWhatsAppBuyBtn"
                   href="https://wa.me/917907073737?text=Hello%20DUNK%20%26%20WOKE!%20I%20want%20to%20order%20Salomon%20XT-6%20(Advanced%20Trail,%20Size%20UK%208)%20for%20₹3,499%20featured%20on%20your%20website."
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex-1 py-2 px-3 rounded-xl bg-white hover:bg-ash-100 text-ash-950 font-extrabold text-xs text-center shadow-lg transition hover:scale-[1.02] flex items-center justify-center gap-1.5"
+                  class="flex-1 py-2 sm:py-2.5 px-3 rounded-xl bg-white hover:bg-ash-100 text-ash-950 font-extrabold text-xs text-center shadow-lg transition hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-1.5"
                 >
                   <i data-lucide="zap" class="w-3.5 h-3.5 fill-current"></i>
                   <span>BUY NOW</span>
@@ -403,17 +415,18 @@
                 <button 
                   type="button" 
                   onclick="replayShoeLaunchAnimation()" 
-                  class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/15 transition"
+                  class="p-2 sm:p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/15 transition active:scale-95"
                   title="3D Straight Burst Launch"
                 >
-                  <i data-lucide="sparkles" class="w-4 h-4 text-white"></i>
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white"></i>
                 </button>
               </div>
+
             </div>
           </div>
 
           <!-- 3D Shoe Container with dynamic matrix transforms (interpolated via JS lerp on scroll) -->
-          <div id="scrollyShoeViewport" class="relative w-full max-w-lg aspect-square flex items-center justify-center transition-transform duration-75 ease-out select-none">
+          <div id="scrollyShoeViewport" class="relative w-full max-w-lg aspect-square flex items-center justify-center transition-transform duration-75 ease-out select-none -translate-y-8 sm:translate-y-0">
             
             <!-- Floating 3D Angled AIR typographic watermark -->
             <div id="scrollyAirWatermark" class="absolute -top-10 -right-4 sm:-right-8 pointer-events-none select-none z-0 opacity-20 font-display font-black text-6xl sm:text-8xl tracking-widest text-transparent bg-clip-text bg-gradient-to-br from-white via-ash-300 to-transparent transform -rotate-12 transition-all duration-300">
