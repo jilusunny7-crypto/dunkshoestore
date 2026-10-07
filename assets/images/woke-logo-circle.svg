@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <circle cx="200" cy="200" r="195" fill="#ffffff" stroke="#e2e8f0" stroke-width="4"/>
+  <text x="200" y="210" text-anchor="middle" dominant-baseline="middle" font-family="'Space Grotesk', 'Impact', 'Arial Black', sans-serif" font-size="88" font-weight="900" letter-spacing="6" fill="#09090b">
+    WOKE
+  </text>
+  <path d="M 120 250 L 280 250" stroke="#f59e0b" stroke-width="8" stroke-linecap="round"/>
+</svg>

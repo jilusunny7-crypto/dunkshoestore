@@ -1,0 +1,509 @@
+/* DUNK & WOKE Shoe Store - Concrete Ash & Crisp White Luxury Boutique Theme */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap');
+
+:root {
+  --ash-dark: #1b1c1b;        /* Charcoal Architectural Concrete */
+  --ash-mid: #8c8d89;         /* Exact Mid Ash from User's Swatch */
+  --ash-stone: #555753;       /* Stone Ash */
+  --ash-light: #b2b4b1;       /* Light Ash Plaster */
+  --ash-pale: #f4f5f4;        /* Pale Concrete Tint */
+  --ash-border: #dcdedc;      /* Fine Ash Edge */
+  --white: #ffffff;           /* Crisp Pure White */
+}
+
+/* Custom Angled Nike Sneaker Cursor */
+* {
+  cursor: url('../images/nike-cursor.png') 3 4, auto;
+}
+
+/* Interactive elements use the pointer sneaker cursor */
+a, button, [role="button"], .cursor-pointer, input[type="button"], input[type="submit"], select, .filter-btn, .shoe-img-wrapper, [onclick] {
+  cursor: url('../images/nike-cursor-pointer.png') 3 4, pointer !important;
+}
+
+input[type="text"], input[type="search"], input[type="tel"], textarea {
+  cursor: text !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #f4f5f4;
+  background-color: #121312;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Concrete Ash Hero Background */
+.hero-grid-bg {
+  background-color: #1b1c1b;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px, 48px 48px, 48px 48px;
+  position: relative;
+}
+
+.hero-grid-bg::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, rgba(140, 141, 137, 0.28) 0%, rgba(255, 255, 255, 0.08) 45%, transparent 75%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Floating Pill Navbar with Reduced Opacity & Frosted Glass (Reference Style) */
+.floating-pill-nav {
+  background: rgba(18, 19, 18, 0.72);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.12) inset;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 16px;
+  height: 2.5px;
+  background-color: #ffffff;
+  border-radius: 9999px;
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff;
+}
+
+/* Product Card Styling (Dark Ash Boutique Theme) */
+.product-card {
+  background: #181918;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.product-card .shoe-img-wrapper {
+  background: radial-gradient(circle at center, #242624 35%, #141514 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease;
+}
+
+.product-card:hover .shoe-img-wrapper {
+  background: radial-gradient(circle at center, #2e312e 30%, #161716 100%);
+}
+
+.product-card img.shoe-img {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.product-card:hover img.shoe-img {
+  transform: scale(1.05);
+}
+
+/* Wishlist Heart Button */
+.wishlist-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  color: #a1a1aa;
+  transition: all 0.2s ease;
+}
+
+.wishlist-btn:hover {
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.wishlist-btn.active {
+  background-color: #ffffff;
+  color: #e11d48;
+  border-color: #ffffff;
+}
+
+/* Category Filter Pill */
+.category-pill {
+  transition: all 0.25s ease;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.category-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.category-pill.active {
+  background-color: #ffffff !important;
+  color: #121312 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* Promo Banner Cards */
+.promo-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.promo-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(18, 19, 18, 0.95) 100%);
+  z-index: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121312;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2c2a;
+  border-radius: 9999px;
+  border: 2px solid #121312;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f423f;
+}
+
+/* WhatsApp Pulse Ring */
+.whatsapp-pulse {
+  position: relative;
+}
+
+.whatsapp-pulse::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: rgba(37, 211, 102, 0.45);
+  animation: pulseRing 2s infinite;
+  z-index: -1;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+/* Site Preloader / Splash Screen */
+#sitePreloader {
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s ease;
+}
+
+#sitePreloader.preloader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-logo-pulse {
+  animation: preloaderPulse 2s ease-in-out infinite;
+}
+
+@keyframes preloaderPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.35));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.6));
+  }
+}
+
+.preloader-progress-bar {
+  width: 50%;
+  animation: preloaderSlide 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes preloaderSlide {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+/* 3D Interactive Runner Showcase */
+.card-3d-perspective {
+  perspective: 1200px;
+}
+
+.card-3d-content {
+  transform-style: preserve-3d;
+  transition: transform 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+/* Speed streaks zooming in perspective */
+@keyframes speedStreakAnim {
+  0% {
+    transform: translateY(-20px) scaleY(0.3);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(180px) scaleY(1.8);
+    opacity: 0;
+  }
+}
+
+.speed-streak {
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.85), transparent);
+  animation: speedStreakAnim 1.1s linear infinite;
+  pointer-events: none;
+}
+
+/* Athletic running stride cadence animation */
+@keyframes runnerStrideCadence {
+  0%, 100% {
+    transform: translateY(0) scale(1.02);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.04);
+  }
+}
+
+.animate-runner-stride {
+  animation: runnerStrideCadence 0.72s ease-in-out infinite;
+}
+
+/* Turbo sprint camera vibration */
+@keyframes turboShakeAnim {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-2px, 2px); }
+  50% { transform: translate(2px, -2px); }
+  75% { transform: translate(-1px, -1px); }
+}
+
+.turbo-active {
+  animation: turboShakeAnim 0.12s ease-in-out infinite !important;
+}
+
+/* Wisk.aero Style Cinematic Scrollytelling Shoe Showcase */
+#scrollyShoeViewport {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.hotspot-radar-pulse {
+  animation: radarPulse 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+@keyframes radarPulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* Angled Air Streamlines */
+@keyframes angledAirFlow {
+  0% {
+    transform: translate(-120px, -60px) rotate(-28deg) scaleX(0.4);
+    opacity: 0;
+  }
+  45% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(650px, 340px) rotate(-28deg) scaleX(1.4);
+    opacity: 0;
+  }
+}
+
+.angled-air-stream {
+  position: absolute;
+  width: 320px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  animation: angledAirFlow 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  pointer-events: none;
+}
+
+/* ======================================================= */
+/* EXPLOSIVE "SUDDENLY COMING FRONT" 3D SNEAKER ANIMATION  */
+/* ======================================================= */
+@keyframes shoeSuddenlyComingFront {
+  0% {
+    opacity: 0;
+    transform: perspective(1400px) translate3d(0, 40px, -650px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(0.25);
+    filter: blur(14px) brightness(2.0);
+  }
+  50% {
+    opacity: 1;
+    transform: perspective(1400px) translate3d(0, -12px, 60px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.15);
+    filter: blur(0px) brightness(1.2);
+  }
+  75% {
+    transform: perspective(1400px) translate3d(0, 6px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(0.98);
+    filter: blur(0px) brightness(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1400px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.0);
+    filter: blur(0px) brightness(1.0);
+  }
+}
+
+.shoe-burst-in {
+  animation: shoeSuddenlyComingFront 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes shoeHoverFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.shoe-hover-float {
+  animation: shoeHoverFloat 4.2s ease-in-out infinite;
+}
+
+/* Diagonal Neon Laser Speed Trails (40-deg angle matching sole) */
+.neon-laser-streak {
+  position: absolute;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #ff2a85 20%, #ff0055 50%, #00f2fe 80%, transparent 100%);
+  box-shadow: 0 0 25px #ff2a85, 0 0 50px rgba(255, 42, 133, 0.6);
+  transform: rotate(-38deg);
+  transform-origin: center;
+  pointer-events: none;
+  animation: laserPulseGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes laserPulseGlow {
+  0% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 10px #ff2a85);
+  }
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 30px #00f2fe);
+  }
+}
+
+/* Right Arc Radial Wheel Dial */
+.radial-dial-wheel {
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 220px;
+  height: 440px;
+  border-radius: 440px 0 0 440px;
+  border-left: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: -10px 0 35px -10px rgba(255, 42, 133, 0.25);
+  pointer-events: none;
+}
+
+.radial-thumb-btn {
+  pointer-events: auto;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.radial-thumb-btn:hover,
+.radial-thumb-btn.active {
+  transform: scale(1.18);
+  border-color: #ff2a85 !important;
+  box-shadow: 0 0 25px rgba(255, 42, 133, 0.7) !important;
+}
+
+/* Diagonal Floating Cards Platform */
+.diagonal-cards-platform {
+  transform: rotate(-38deg) skewX(-10deg);
+  transform-origin: center;
+}
+
+
+
