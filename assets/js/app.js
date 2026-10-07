@@ -1610,7 +1610,11 @@ function initScrollyShoe() {
     if (heroHUD) {
       heroHUD.style.opacity = showFrontHeroUI ? `${Math.max(0, 1 - p * 5)}` : '0';
       heroHUD.style.pointerEvents = showFrontHeroUI ? 'auto' : 'none';
-      heroHUD.style.transform = `translateY(calc(-50% + ${p * 60}px)) scale(${Math.max(0.8, 1 - p * 0.5)})`;
+      if (window.innerWidth < 640) {
+        heroHUD.style.transform = `translateY(${p * 40}px) scale(${Math.max(0.9, 1 - p * 0.3)})`;
+      } else {
+        heroHUD.style.transform = `translateY(calc(-50% + ${p * 60}px)) scale(${Math.max(0.8, 1 - p * 0.5)})`;
+      }
     }
     if (heroCards) {
       heroCards.style.opacity = showFrontHeroUI ? `${Math.max(0, 1 - p * 5)}` : '0';
