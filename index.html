@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DUNK, WOKE Shoe Store | Walk with Style, Step with Confidence | Koduvally, Calicut</title>
+  
+  <!-- Meta SEO -->
+  <meta name="description" content="DUNK, WOKE Shoe Store (@dunk.shoestore) in Koduvally, Calicut. Formals, Sandals, Women's shoes, Sneakers. All India Delivery with instant WhatsApp ordering.">
+  <meta property="og:title" content="DUNK, WOKE Shoe Store | Koduvally, Calicut">
+  <meta property="og:description" content="Walk with Style, Step with Confidence. Formals, Sandals, Women, Sneakers. Instant WhatsApp Orders & All India Delivery.">
+  <meta property="og:image" content="assets/images/dunk-logo-zoomed.png">
+  
+  <!-- Browser Tab Icons & Favicons (From User's WOK Logo) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/images/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon-64.png">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ash: {
+              50: '#f7f8f7',
+              100: '#eceeed',
+              200: '#dcdedc',
+              300: '#b2b4b1',
+              400: '#8c8d89',
+              500: '#6f716c',
+              600: '#555753',
+              700: '#383a37',
+              800: '#272927',
+              900: '#1b1c1b',
+              950: '#121312',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#121312] text-ash-100 antialiased selection:bg-white selection:text-black">
+
+  <!-- SITE PRELOADER / SPLASH SCREEN (Shown when site loads or has brief lag) -->
+  <div id="sitePreloader" onclick="this.classList.add('preloader-hidden'); setTimeout(() => this.style.display='none', 400);" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#121312] text-white cursor-pointer" title="Click to enter site">
+    <!-- Ambient glowing backdrop effect -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#8c8d89]/20 rounded-full blur-2xl"></div>
+    </div>
+
+    <!-- Center Brand Badge & Animation -->
+    <div class="relative z-10 flex flex-col items-center text-center px-4 pointer-events-none">
+      <!-- Dual Brand Logos with glowing ring and pulse -->
+      <div class="flex items-center -space-x-3 mb-6 relative preloader-logo-pulse">
+        <!-- DUNK Logo -->
+        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white p-1 shadow-2xl border-2 border-ash-700 flex items-center justify-center relative z-10">
+          <img src="assets/images/dunk-logo-zoomed.png" alt="DUNK Logo" class="w-full h-full object-contain" />
+        </div>
+        <!-- WOKE Logo (User's uploaded WOK logo) -->
+        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white p-1 shadow-2xl border-2 border-ash-400 flex items-center justify-center relative z-0">
+          <img src="assets/images/favicon-180.png" alt="WOKE Logo" class="w-full h-full object-contain" />
+        </div>
+      </div>
+
+      <!-- Brand Title -->
+      <h2 class="text-2xl sm:text-3xl font-black font-display tracking-tight text-white mb-1.5 flex items-center gap-1.5">
+        DUNK <span class="text-ash-400 font-extrabold">&amp;</span> WOKE
+      </h2>
+      <p class="text-xs sm:text-sm text-ash-300 font-bold uppercase tracking-widest mb-6">
+        Shoe Store • Calicut
+      </p>
+
+      <!-- Sleek Loading Bar / Progress Indicator -->
+      <div class="w-44 h-1 bg-ash-800 rounded-full overflow-hidden mb-3 border border-ash-700 relative">
+        <div class="preloader-progress-bar h-full bg-gradient-to-r from-ash-400 via-white to-ash-300 rounded-full"></div>
+      </div>
+
+      <p class="text-[11px] text-ash-400 font-medium tracking-wide animate-pulse">
+        Walk with Style, Step with Confidence...
+      </p>
+    </div>
+  </div>
+
+  <!-- Immediate Preloader Failsafe Script -->
+  <script>
+    (function() {
+      function dismissSitePreloader() {
+        var p = document.getElementById('sitePreloader');
+        if (p && !p.classList.contains('preloader-hidden')) {
+          p.classList.add('preloader-hidden');
+          setTimeout(function() { p.style.display = 'none'; }, 600);
+        }
+      }
+      window.addEventListener('load', function() { setTimeout(dismissSitePreloader, 400); });
+      document.addEventListener('DOMContentLoaded', function() { setTimeout(dismissSitePreloader, 900); });
+      setTimeout(dismissSitePreloader, 1800);
+    })();
+  </script>
+
+  <!-- FIXED SITE HEADER (PRESERVED ACROSS FRONT PAGE ANIMATION & CATALOG) -->
+  <header id="siteMainHeader" class="fixed top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300">
+    <!-- Top Announcement Bar (Concrete Ash & Pure White) -->
+    <div id="topAnnouncementBar" class="bg-[#121312]/95 backdrop-blur-md text-ash-300 text-xs py-2 px-4 border-b border-white/10 hidden sm:block">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center gap-4 text-[11px] sm:text-xs font-semibold">
+          <span class="flex items-center gap-1.5 font-bold text-white">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-ash-400"></i> DUNK, WOKE SHOE STORE • Koduvally, Calicut
+          </span>
+          <span class="hidden md:inline text-ash-700">•</span>
+          <span class="flex items-center gap-1.5 text-ash-200">
+            <i data-lucide="truck" class="w-3.5 h-3.5 text-ash-400"></i> All India Delivery 📬
+          </span>
+          <span class="hidden md:inline text-ash-700">•</span>
+          <span class="hidden sm:flex items-center gap-1.5 text-ash-300">
+            FORMALS | SANDALS | WOMEN | SNEAKERS
+          </span>
+        </div>
+
+        <div class="flex items-center gap-4 text-[11px] sm:text-xs">
+          <a href="https://chat.whatsapp.com/leRRgxWOAYx1XZcXuUNh" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center gap-1 font-bold text-ash-200">
+            <i data-lucide="users" class="w-3.5 h-3.5 text-ash-400"></i> Join VIP WhatsApp Group (25% OFF)
+          </a>
+          <span class="text-ash-700">|</span>
+          <a href="tel:+917034677538" class="hover:text-white transition flex items-center gap-1 font-semibold text-ash-200">
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-ash-400"></i> 7034 677 538
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Reduced Opacity Frosted Pill-Shaped Navbar Container -->
+    <div class="max-w-7xl mx-auto px-4 pt-2.5 sm:pt-3">
+      <nav class="floating-pill-nav py-2 sm:py-2.5 px-4 sm:px-6 flex items-center justify-between text-white shadow-2xl">
+        
+        <!-- Brand Logos (DUNK zoomed & WOKE) & Store Name -->
+        <a href="#" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+          <!-- Dual Brand Logos -->
+          <div class="flex items-center -space-x-1.5">
+            <!-- Zoomed DUNK Logo -->
+            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden bg-white shadow-md border-2 border-white/80 flex items-center justify-center p-0.5 relative z-10 group-hover:scale-105 transition" title="DUNK">
+              <img src="assets/images/dunk-logo-zoomed.png" alt="DUNK Logo" class="w-full h-full object-contain" />
+            </div>
+            <!-- WOKE Logo -->
+            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden bg-white shadow-md border-2 border-white/40 flex items-center justify-center p-0.5 relative z-0 group-hover:scale-105 transition" title="WOKE">
+              <img src="assets/images/favicon-180.png" alt="WOKE Logo" class="w-full h-full object-contain" />
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-black tracking-tight text-base sm:text-xl font-display text-white group-hover:text-ash-100 transition leading-tight flex items-center gap-1">
+              DUNK <span class="text-ash-400 font-extrabold">&amp;</span> WOKE
+            </span>
+            <span class="text-[9px] sm:text-[10px] uppercase font-extrabold tracking-widest text-ash-400 leading-none">
+              Shoe Store • Calicut
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-4 lg:gap-6 text-xs lg:text-sm font-semibold text-ash-300">
+          <a href="#" class="nav-link active hover:text-white">Home</a>
+          <a href="#popular-products" onclick="setCategory('stock')" class="nav-link hover:text-white font-bold text-white flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> In Stock
+          </a>
+          <a href="#popular-products" class="nav-link hover:text-white">Popular</a>
+          <a href="#categories-section" class="nav-link hover:text-white">Categories</a>
+          <a href="#best-collection" class="nav-link hover:text-white">Collection</a>
+          <a href="#about-section" class="nav-link hover:text-white">About</a>
+          <a href="#store-contact" class="nav-link hover:text-white">Store & Contact</a>
+          <button onclick="openSizeGuideModal()" class="nav-link hover:text-white font-semibold flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition border border-white/15" title="Shoe Size Converter & Guide">
+            <i data-lucide="ruler" class="w-3.5 h-3.5 text-ash-300"></i> Size Guide
+          </button>
+          <a href="admin.html" target="_blank" class="nav-link hover:text-white font-bold flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 transition border border-emerald-500/30" title="Shoe Stock & Inventory Manager">
+            <i data-lucide="shield" class="w-3.5 h-3.5"></i> Stock Admin
+          </a>
+        </div>
+
+        <!-- Right Action Icons -->
+        <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+          <!-- Search Button -->
+          <button 
+            onclick="toggleSearchModal()" 
+            class="w-9 h-9 rounded-full hover:bg-white/10 flex items-center justify-center text-ash-300 hover:text-white transition"
+            title="Search shoes"
+            aria-label="Search"
+          >
+            <i data-lucide="search" class="w-4 h-4"></i>
+          </button>
+
+          <!-- Wishlist Button with Badge -->
+          <button 
+            onclick="toggleWishlistModal()" 
+            class="relative w-9 h-9 rounded-full hover:bg-white/10 flex items-center justify-center text-ash-300 hover:text-white transition"
+            title="Wishlist"
+            aria-label="Wishlist"
+          >
+            <i data-lucide="heart" class="w-4 h-4"></i>
+            <span id="wishlistBadge" class="hidden absolute -top-1 -right-1 w-4 h-4 bg-white text-ash-950 text-[10px] font-black rounded-full items-center justify-center shadow">
+              0
+            </span>
+          </button>
+
+          <!-- Cart Bag Button with Badge -->
+          <button 
+            onclick="toggleCart()" 
+            class="relative w-9 h-9 rounded-full hover:bg-white/10 flex items-center justify-center text-ash-300 hover:text-white transition"
+            title="Cart"
+            aria-label="Shopping Cart"
+          >
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            <span id="cartBadge" class="hidden absolute -top-1 -right-1 w-4 h-4 bg-white text-ash-950 text-[10px] font-black rounded-full items-center justify-center shadow">
+              0
+            </span>
+          </button>
+
+          <!-- WhatsApp Connect Pill -->
+          <a 
+            href="https://wa.me/917907073737?text=Hello%20DUNK%20%26%20WOKE%20Shoe%20Store!%20I%20am%20visiting%20your%20website%20and%20would%20like%20to%20know%20more." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="hidden sm:flex items-center gap-1.5 bg-white hover:bg-ash-100 text-ash-950 px-3.5 py-1.5 rounded-full text-xs font-black transition shadow-lg border border-white"
+          >
+            <i data-lucide="message-circle" class="w-3.5 h-3.5 fill-current"></i>
+            <span>WhatsApp</span>
+          </a>
+
+          <!-- Mobile Hamburger -->
+          <button 
+            id="mobileMenuBtn" 
+            class="md:hidden w-9 h-9 rounded-full hover:bg-white/10 flex items-center justify-center text-ash-200 hover:text-white transition"
+            aria-label="Toggle navigation"
+          >
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobileNav" class="hidden md:hidden mt-2 bg-[#161716]/95 backdrop-blur-2xl rounded-2xl p-4 shadow-2xl border border-white/15 text-ash-200">
+        <div class="flex flex-col gap-3 text-sm font-semibold">
+          <a href="#" class="py-1 hover:text-white">Home</a>
+          <a href="#popular-products" onclick="setCategory('stock')" class="py-1 text-white font-bold flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Available Stock (Calicut Store)
+          </a>
+          <a href="#popular-products" class="py-1 hover:text-white">Popular Shoes</a>
+          <a href="#categories-section" class="py-1 hover:text-white">Categories (Formals, Sandals, Women)</a>
+          <a href="#best-collection" class="py-1 hover:text-white">Best Collection</a>
+          <a href="#store-contact" class="py-1 hover:text-white">Store Location & WhatsApp</a>
+          <button onclick="openSizeGuideModal(); toggleMobileMenu();" class="py-1 text-white font-bold flex items-center gap-2 hover:text-ash-200 text-left">
+            <i data-lucide="ruler" class="w-4 h-4 text-ash-300"></i> Shoe Size Guide &amp; Converter
+          </button>
+          <hr class="border-white/15 my-1" />
+          <a href="https://wa.me/917907073737" target="_blank" class="flex items-center gap-2 text-white py-1 font-bold">
+            <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i> Chat on WhatsApp (+91 7907073737)
+          </a>
+          <a href="https://maps.app.goo.gl/HjKkXckXKGd3jq7JA?g_st=ic" target="_blank" class="flex items-center gap-2 text-ash-300 hover:text-white py-1 font-bold">
+            <i data-lucide="map-pin" class="w-4 h-4 text-ash-400"></i> Open Location in Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================== -->
+  <!-- CINEMATIC SCROLL-DRIVEN SNEAKER SHOWCASE (WISK.AERO / APPLE STYLE) -->
+  <!-- ============================================================== -->
+  <section id="scrollyShoeSection" class="relative bg-[#121312] text-white">
+    <!-- Multi-Viewport Scroll Track (Height 420vh gives generous, butter-smooth scroll range) -->
+    <div id="scrollyTrack" class="relative h-[420vh]">
+      
+      <!-- STICKY VIEWPORT STAGE (Pinned in view while scrolling through the 420vh track) -->
+      <div id="scrollyStickyStage" class="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-between hero-grid-bg">
+        
+        <!-- Ambient Cinematic Lighting & Depth Grid -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+          <div id="scrollyAmbientGlow" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-white/5 rounded-full blur-[120px] transition-all duration-700"></div>
+          <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-[#ff2a85]/10 rounded-full blur-[100px]"></div>
+          <!-- Fine architectural grid lines -->
+          <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        </div>
+
+        <!-- Giant Background Watermark Typography (Nike Concept Reference) -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 overflow-hidden">
+          <div id="heroBgWatermark" class="font-display font-black text-[22vw] leading-none text-white/[0.035] tracking-tighter uppercase transform -translate-y-4 transition-all duration-700">
+            SALOMON
+          </div>
+        </div>
+
+        <!-- Diagonal Neon Laser Speed Trails (40-deg angle matching sole) -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 flex items-center justify-center">
+          <div class="neon-laser-streak w-[140vw] sm:w-[110vw] -translate-x-10 translate-y-6"></div>
+          <div class="neon-laser-streak w-[120vw] -translate-x-6 translate-y-16 opacity-40" style="animation-delay: 1.2s;"></div>
+        </div>
+
+        <!-- Top Status Bar & Skip Button -->
+        <div class="relative z-30 pt-24 sm:pt-28 px-4 sm:px-8 max-w-7xl mx-auto w-full flex items-center justify-between pointer-events-auto">
+          <!-- Live Breadcrumb / Status -->
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+            <span class="text-[11px] font-black tracking-widest uppercase text-ash-300">
+              FEATURE DROP • <span id="heroTopBadgeName" class="text-white">SALOMON XT-6 ADVANCED</span>
+            </span>
+          </div>
+
+          <!-- Quick Navigation Actions -->
+          <div class="flex items-center gap-2 sm:gap-3">
+            <button 
+              type="button" 
+              onclick="replayShoeLaunchAnimation()" 
+              class="px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition backdrop-blur-md border border-white/20 flex items-center gap-1.5"
+              title="Launch 3D Straight Burst Animation"
+            >
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-white"></i>
+              <span class="hidden sm:inline">3D Launch</span>
+            </button>
+            <button 
+              type="button"
+              onclick="openSizeGuideModal()"
+              class="px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition backdrop-blur-md border border-white/15 flex items-center gap-1.5"
+            >
+              <i data-lucide="ruler" class="w-3.5 h-3.5 text-ash-300"></i>
+              <span class="hidden sm:inline">Size Guide</span>
+            </button>
+            <a 
+              href="#popular-products" 
+              class="px-4 py-1.5 rounded-full bg-white text-ash-950 hover:bg-ash-100 text-xs font-black transition shadow-lg flex items-center gap-1.5"
+            >
+              <span>Skip to Shop</span>
+              <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- CENTER STAGE: 3D SNEAKER CANVAS & TRANSFORM WRAPPER -->
+        <div class="relative z-10 flex-1 w-full max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-center pointer-events-none">
+          
+          <!-- LEFT FLOATING TECH HUD CARD -->
+          <div id="heroProductHUD" class="absolute left-4 sm:left-8 lg:left-12 top-1/2 -translate-y-1/2 z-30 max-w-[270px] sm:max-w-xs pointer-events-auto transition-all duration-500">
+            <div class="bg-[#161716]/90 backdrop-blur-xl p-4 sm:p-5 rounded-3xl border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/15 text-white border border-white/25 text-[10px] font-black uppercase tracking-wider mb-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                NEW IN STORE • CALICUT
+              </span>
+              <h2 id="heroShoeTitle" class="text-2xl sm:text-3xl font-black font-display text-white leading-tight">
+                Salomon XT-6
+              </h2>
+              <div id="heroShoeSubtitle" class="text-xs sm:text-sm font-bold text-ash-300 mb-2">
+                Advanced Trail • ACS Chassis
+              </div>
+              <div id="heroShoePrice" class="text-xl sm:text-2xl font-black text-white mb-3">
+                ₹3,499 <span class="text-xs text-ash-400 line-through font-normal">₹5,499</span>
+              </div>
+
+              <!-- Colorway / Model Selector Dots -->
+              <div class="mb-3">
+                <div class="text-[9px] uppercase font-bold text-ash-400 tracking-wider mb-1.5">Featured Models</div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="switchHeroShoe('salomon-xt6')" class="w-6 h-6 rounded-full bg-[#1e201e] border-2 border-white shadow-md ring-2 ring-white/60 transition hover:scale-110" title="Salomon XT-6 (Stealth Black)"></button>
+                  <button type="button" onclick="switchHeroShoe('air-force-1')" class="w-6 h-6 rounded-full bg-white border-2 border-ash-400 transition hover:scale-110" title="Nike Air Force 1 Low (Triple White)"></button>
+                  <button type="button" onclick="switchHeroShoe('puma-palermo')" class="w-6 h-6 rounded-full bg-[#001f3f] border-2 border-amber-500 transition hover:scale-110" title="Puma Palermo (Suede Classic)"></button>
+                </div>
+              </div>
+
+              <!-- Size Selector Pills -->
+              <div class="mb-4">
+                <div class="flex items-center justify-between text-[9px] uppercase font-bold text-ash-400 tracking-wider mb-1.5">
+                  <span>Select UK Size</span>
+                  <button type="button" onclick="openSizeGuideModal()" class="text-ash-300 hover:text-white underline lowercase">size guide</button>
+                </div>
+                <div id="heroSizePills" class="flex flex-wrap gap-1">
+                  <button type="button" onclick="selectHeroSize(this, '7')" class="hero-size-btn px-2 py-0.5 rounded-lg text-xs font-bold border border-white/15 bg-white/5 hover:bg-white hover:text-black transition">7</button>
+                  <button type="button" onclick="selectHeroSize(this, '8')" class="hero-size-btn active px-2 py-0.5 rounded-lg text-xs font-bold border border-white bg-white text-black transition shadow-sm">8</button>
+                  <button type="button" onclick="selectHeroSize(this, '9')" class="hero-size-btn px-2 py-0.5 rounded-lg text-xs font-bold border border-white/15 bg-white/5 hover:bg-white hover:text-black transition">9</button>
+                  <button type="button" onclick="selectHeroSize(this, '10')" class="hero-size-btn px-2 py-0.5 rounded-lg text-xs font-bold border border-white/15 bg-white/5 hover:bg-white hover:text-black transition">10</button>
+                </div>
+              </div>
+
+              <!-- Action CTA: Buy on WhatsApp + Replay Launch -->
+              <div class="flex items-center gap-2">
+                <a 
+                  id="heroWhatsAppBuyBtn"
+                  href="https://wa.me/917907073737?text=Hello%20DUNK%20%26%20WOKE!%20I%20want%20to%20order%20Salomon%20XT-6%20(Advanced%20Trail,%20Size%20UK%208)%20for%20₹3,499%20featured%20on%20your%20website."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 py-2 px-3 rounded-xl bg-white hover:bg-ash-100 text-ash-950 font-extrabold text-xs text-center shadow-lg transition hover:scale-[1.02] flex items-center justify-center gap-1.5"
+                >
+                  <i data-lucide="zap" class="w-3.5 h-3.5 fill-current"></i>
+                  <span>BUY NOW</span>
+                </a>
+                <button 
+                  type="button" 
+                  onclick="replayShoeLaunchAnimation()" 
+                  class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/15 transition"
+                  title="3D Straight Burst Launch"
+                >
+                  <i data-lucide="sparkles" class="w-4 h-4 text-white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3D Shoe Container with dynamic matrix transforms (interpolated via JS lerp on scroll) -->
+          <div id="scrollyShoeViewport" class="relative w-full max-w-lg aspect-square flex items-center justify-center transition-transform duration-75 ease-out select-none">
+            
+            <!-- Floating 3D Angled AIR typographic watermark -->
+            <div id="scrollyAirWatermark" class="absolute -top-10 -right-4 sm:-right-8 pointer-events-none select-none z-0 opacity-20 font-display font-black text-6xl sm:text-8xl tracking-widest text-transparent bg-clip-text bg-gradient-to-br from-white via-ash-300 to-transparent transform -rotate-12 transition-all duration-300">
+              — AIR —
+            </div>
+
+            <!-- Aerodynamic Angled Air Streamlines -->
+            <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-40">
+              <div class="angled-air-stream" style="top: 16%; left: -25%; animation-delay: 0s;"></div>
+              <div class="angled-air-stream" style="top: 48%; left: -15%; animation-delay: 0.75s;"></div>
+              <div class="angled-air-stream" style="top: 76%; left: -5%; animation-delay: 1.5s;"></div>
+            </div>
+
+            <!-- Sneaker Layer 1: Active 3D Sneaker with Straight "Suddenly Coming Front" Animation -->
+            <div id="scrollyShoeUpper" class="absolute inset-0 flex items-center justify-center transition-opacity duration-500 z-10 shoe-burst-in">
+              <img 
+                id="heroActiveSneakerImg"
+                src="assets/images/salomon-xt6-hero.jpg" 
+                alt="Salomon XT-6 - DUNK &amp; WOKE Shoe Store" 
+                class="w-full h-full object-contain filter drop-shadow-[0_30px_55px_rgba(0,0,0,0.9)] pointer-events-auto rounded-3xl shoe-hover-float"
+              />
+
+              <!-- HOTSPOT RADAR CALLOUT PINS (Reveal dynamically during Chapter 2 & 3) -->
+              <!-- Pin 1: Toe Box Perforations -->
+              <div id="hotspotPin1" class="absolute top-[68%] left-[28%] -translate-x-1/2 -translate-y-1/2 z-30 transition-all duration-500 opacity-0 pointer-events-auto">
+                <div class="relative group">
+                  <div class="hotspot-radar-pulse w-6 h-6 rounded-full bg-white/40 absolute inset-0"></div>
+                  <div class="w-6 h-6 rounded-full bg-white text-ash-950 font-black text-[11px] flex items-center justify-center shadow-2xl relative z-10 border-2 border-ash-900 cursor-pointer">
+                    +
+                  </div>
+                  <!-- Tooltip Card -->
+                  <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-ash-950/95 backdrop-blur-md text-white rounded-xl border border-white/20 shadow-2xl text-[11px] pointer-events-none group-hover:block hidden sm:block">
+                    <div class="font-black text-white uppercase tracking-wider text-[10px] text-ash-300">Toe Box</div>
+                    <div class="font-bold">Perforated Calfskin</div>
+                    <div class="text-[10px] text-ash-400">Micro-ventilation for all-day breathability</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pin 2: AF-1 Metal Dubrae -->
+              <div id="hotspotPin2" class="absolute top-[52%] left-[36%] -translate-x-1/2 -translate-y-1/2 z-30 transition-all duration-500 opacity-0 pointer-events-auto">
+                <div class="relative group">
+                  <div class="hotspot-radar-pulse w-6 h-6 rounded-full bg-white/40 absolute inset-0"></div>
+                  <div class="w-6 h-6 rounded-full bg-white text-ash-950 font-black text-[11px] flex items-center justify-center shadow-2xl relative z-10 border-2 border-ash-900 cursor-pointer">
+                    +
+                  </div>
+                  <!-- Tooltip Card -->
+                  <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-ash-950/95 backdrop-blur-md text-white rounded-xl border border-white/20 shadow-2xl text-[11px] pointer-events-none group-hover:block hidden sm:block">
+                    <div class="font-black text-white uppercase tracking-wider text-[10px] text-ash-300">Heritage Lace Plate</div>
+                    <div class="font-bold">Brushed Metal AF-1 Dubrae</div>
+                    <div class="text-[10px] text-ash-400">Engraved 1982 iconic hardware lock</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pin 3: Double Stitched Swoosh -->
+              <div id="hotspotPin3" class="absolute top-[44%] left-[60%] -translate-x-1/2 -translate-y-1/2 z-30 transition-all duration-500 opacity-0 pointer-events-auto">
+                <div class="relative group">
+                  <div class="hotspot-radar-pulse w-6 h-6 rounded-full bg-white/40 absolute inset-0"></div>
+                  <div class="w-6 h-6 rounded-full bg-white text-ash-950 font-black text-[11px] flex items-center justify-center shadow-2xl relative z-10 border-2 border-ash-900 cursor-pointer">
+                    +
+                  </div>
+                  <!-- Tooltip Card -->
+                  <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2.5 bg-ash-950/95 backdrop-blur-md text-white rounded-xl border border-white/20 shadow-2xl text-[11px] pointer-events-none group-hover:block hidden sm:block">
+                    <div class="font-black text-white uppercase tracking-wider text-[10px] text-ash-300">Iconic Logo</div>
+                    <div class="font-bold">Tumbled Leather Swoosh</div>
+                    <div class="text-[10px] text-ash-400">Precision industrial double stitchwork</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sneaker Layer 2: Outsole & Air Cushion Unit (Cross-fades in during Chapter 3) -->
+            <div id="scrollyShoeSole" class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500 pointer-events-none z-10">
+              <img 
+                src="assets/images/af1-sole.jpg" 
+                alt="Nike Air Force 1 Outsole & Air Cushion" 
+                class="w-full h-full object-contain filter drop-shadow-[0_25px_45px_rgba(0,0,0,0.85)] rounded-3xl"
+              />
+
+              <!-- Pin 4: Encapsulated Air Unit & Embossed Lateral Air -->
+              <div id="hotspotPin4" class="absolute top-[32%] right-[24%] -translate-x-1/2 -translate-y-1/2 z-30 transition-all duration-500 opacity-0 pointer-events-auto">
+                <div class="relative group">
+                  <div class="hotspot-radar-pulse w-6 h-6 rounded-full bg-white/40 absolute inset-0"></div>
+                  <div class="w-6 h-6 rounded-full bg-white text-ash-950 font-black text-[11px] flex items-center justify-center shadow-2xl relative z-10 border-2 border-ash-900 cursor-pointer">
+                    +
+                  </div>
+                  <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-52 p-2.5 bg-ash-950/95 backdrop-blur-md text-white rounded-xl border border-white/20 shadow-2xl text-[11px] pointer-events-none group-hover:block hidden sm:block">
+                    <div class="font-black text-white uppercase tracking-wider text-[10px] text-ash-300">Cushioning Tech</div>
+                    <div class="font-bold">Angled Air Capsule + Midsole Logo</div>
+                    <div class="text-[10px] text-ash-400">Embossed lateral "- AIR -" shock absorption</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pin 5: Pivot-Point Rubber Tread -->
+              <div id="hotspotPin5" class="absolute top-[68%] left-[45%] -translate-x-1/2 -translate-y-1/2 z-30 transition-all duration-500 opacity-0 pointer-events-auto">
+                <div class="relative group">
+                  <div class="hotspot-radar-pulse w-6 h-6 rounded-full bg-white/40 absolute inset-0"></div>
+                  <div class="w-6 h-6 rounded-full bg-white text-ash-950 font-black text-[11px] flex items-center justify-center shadow-2xl relative z-10 border-2 border-ash-900 cursor-pointer">
+                    +
+                  </div>
+                  <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-52 p-2.5 bg-ash-950/95 backdrop-blur-md text-white rounded-xl border border-white/20 shadow-2xl text-[11px] pointer-events-none group-hover:block hidden sm:block">
+                    <div class="font-black text-white uppercase tracking-wider text-[10px] text-ash-300">Traction Pattern</div>
+                    <div class="font-bold">Circular Pivot Tread Rings</div>
+                    <div class="text-[10px] text-ash-400">Superior 360° rotational street grip</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- FLOATING MINI-CARDS STRIP (Salomon, Nike AF1, Puma) -->
+          <div id="heroDiagonalCards" class="hidden sm:flex absolute bottom-8 lg:bottom-12 left-1/2 -translate-x-12 z-20 items-center gap-3 diagonal-cards-platform pointer-events-auto transition-all duration-500">
+            <button type="button" onclick="switchHeroShoe('salomon-xt6')" class="group p-1.5 rounded-2xl bg-white/10 hover:bg-white/25 border border-white/20 backdrop-blur-md shadow-xl transition-all duration-300 hover:scale-110 active:scale-95" title="Salomon XT-6 Advanced">
+              <img src="assets/images/salomon-xt6-hero.jpg" alt="Salomon XT-6" class="w-14 h-14 sm:w-16 sm:h-16 object-contain rounded-xl" />
+            </button>
+            <button type="button" onclick="switchHeroShoe('air-force-1')" class="group p-1.5 rounded-2xl bg-white/10 hover:bg-white/25 border border-white/20 backdrop-blur-md shadow-xl transition-all duration-300 hover:scale-110 active:scale-95" title="Nike Air Force 1 Low (Full Angled White)">
+              <img src="assets/images/nike-af1-angled.jpg" alt="Nike Air Force 1" class="w-14 h-14 sm:w-16 sm:h-16 object-contain rounded-xl" />
+            </button>
+            <button type="button" onclick="switchHeroShoe('puma-palermo')" class="group p-1.5 rounded-2xl bg-white/10 hover:bg-white/25 border border-white/20 backdrop-blur-md shadow-xl transition-all duration-300 hover:scale-110 active:scale-95" title="Puma Palermo Suede">
+              <img src="assets/images/puma-palermo-hero.jpg" alt="Puma Palermo" class="w-14 h-14 sm:w-16 sm:h-16 object-contain rounded-xl" />
+            </button>
+          </div>
+
+          <!-- RIGHT RADIAL WHEEL DIAL (Salomon, Nike AF1, Puma) -->
+          <div id="heroRadialDial" class="hidden lg:flex flex-col items-center justify-center absolute right-4 xl:right-10 top-1/2 -translate-y-1/2 z-30 pointer-events-auto transition-all duration-500">
+            <div class="relative w-24 h-56 flex flex-col items-center justify-between py-3">
+              <div class="radial-dial-wheel"></div>
+              <button type="button" onclick="switchHeroShoe('salomon-xt6')" id="radialBtn-salomon-xt6" class="radial-thumb-btn active w-11 h-11 rounded-full bg-[#1e201e] border-2 border-white p-0.5 shadow-lg overflow-hidden" title="Salomon XT-6">
+                <img src="assets/images/salomon-xt6-hero.jpg" alt="Salomon XT-6" class="w-full h-full object-contain" />
+              </button>
+              <button type="button" onclick="switchHeroShoe('air-force-1')" id="radialBtn-air-force-1" class="radial-thumb-btn w-11 h-11 rounded-full bg-[#1e201e] border-2 border-white/20 p-0.5 shadow-lg overflow-hidden" title="Nike Air Force 1 (Full Angled White)">
+                <img src="assets/images/nike-af1-angled.jpg" alt="Nike Air Force 1" class="w-full h-full object-contain" />
+              </button>
+              <button type="button" onclick="switchHeroShoe('puma-palermo')" id="radialBtn-puma-palermo" class="radial-thumb-btn w-11 h-11 rounded-full bg-[#1e201e] border-2 border-white/20 p-0.5 shadow-lg overflow-hidden" title="Puma Palermo">
+                <img src="assets/images/puma-palermo-hero.jpg" alt="Puma Palermo" class="w-full h-full object-contain" />
+              </button>
+            </div>
+          </div>
+
+          <!-- NARRATIVE CHAPTER TEXT OVERLAYS (Transition smoothly as scroll reaches each interval) -->
+          <!-- Chapter 1 Overlay: The Icon (0% - 25%) - Minimal sleek top title badge -->
+          <div id="scrollyChapter1" class="absolute inset-x-4 top-24 sm:top-28 max-w-2xl mx-auto text-center pointer-events-none transition-all duration-500 z-10">
+          <div class="flex items-center justify-center gap-2 text-[10px] sm:text-[11px] text-ash-400 font-bold uppercase tracking-widest animate-pulse">
+            <i data-lucide="mouse" class="w-3.5 h-3.5"></i>
+            <span>Scroll to deconstruct in 3D</span>
+            <i data-lucide="chevrons-down" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+
+          <!-- Chapter 2 Overlay: Precision Craft (25% - 50%) -->
+          <div id="scrollyChapter2" class="absolute left-4 sm:left-12 top-1/2 -translate-y-1/2 max-w-md pointer-events-auto transition-all duration-500 opacity-0 pointer-events-none">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-ash-300 border border-white/15 text-[11px] font-extrabold uppercase tracking-wider mb-4">
+              <span>02</span> • <span>ARCHITECTURAL CRAFT</span>
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-black font-display tracking-tight text-white leading-[1.05] mb-4">
+              TUMBLED <br />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-ash-200 to-ash-400">
+                FULL-GRAIN LEATHER
+              </span>
+            </h2>
+            <p class="text-xs sm:text-sm text-ash-300 leading-relaxed font-normal mb-6 max-w-sm">
+              Each panel is cut from premium grade calfskin with authentic pebble grain texture, double-stitched reinforcements, and brushed metal AF-1 lace dubrae.
+            </p>
+            <div class="grid grid-cols-2 gap-3 text-left">
+              <div class="bg-white/5 backdrop-blur-md p-3 rounded-2xl border border-white/10">
+                <div class="text-lg font-black text-white font-display">100%</div>
+                <div class="text-[10px] text-ash-400 font-bold">Genuine Tumbled Hide</div>
+              </div>
+              <div class="bg-white/5 backdrop-blur-md p-3 rounded-2xl border border-white/10">
+                <div class="text-lg font-black text-white font-display">82 Holes</div>
+                <div class="text-[10px] text-ash-400 font-bold">Perforated Airflow</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chapter 3 Overlay: Angled Air Dynamics (50% - 75%) -->
+          <div id="scrollyChapter3" class="absolute right-4 sm:right-12 top-1/2 -translate-y-1/2 max-w-md text-right pointer-events-auto transition-all duration-500 opacity-0 pointer-events-none">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-ash-300 border border-white/15 text-[11px] font-extrabold uppercase tracking-wider mb-4">
+              <span>03</span> • <span>35° ANGLED AIR DYNAMICS</span>
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-black font-display tracking-tight text-white leading-[1.05] mb-4">
+              35° ANGLED <br />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-ash-200 to-ash-400">
+                AIR-SOLE UNIT
+              </span>
+            </h2>
+            <p class="text-xs sm:text-sm text-ash-300 leading-relaxed font-normal mb-6 max-w-sm ml-auto">
+              Engineered with an aggressive 35° lateral heel incline and encapsulated pressurized Air-Sole capsule. Embossed lateral "- AIR -" midsole badge absorbs street impact.
+            </p>
+            <div class="grid grid-cols-2 gap-3 text-right">
+              <div class="bg-white/5 backdrop-blur-md p-3 rounded-2xl border border-white/10">
+                <div class="text-lg font-black text-white font-display">35mm Lift</div>
+                <div class="text-[10px] text-ash-400 font-bold">35° Angled Incline</div>
+              </div>
+              <div class="bg-white/5 backdrop-blur-md p-3 rounded-2xl border border-white/10">
+                <div class="text-lg font-black text-white font-display">Lateral AIR</div>
+                <div class="text-[10px] text-ash-400 font-bold">Embossed Sole Unit</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chapter 4 Overlay: Ready to Wear (75% - 100%) -->
+          <div id="scrollyChapter4" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-lg w-full text-center pointer-events-auto transition-all duration-500 opacity-0 pointer-events-none">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-white text-[11px] font-black uppercase tracking-wider mb-4 border border-white/20">
+              <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+              IN STORE AT KODUVALLY • CALICUT
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-black font-display tracking-tight text-white leading-[1.05] mb-3">
+              YOUR PAIR IS WAITING
+            </h2>
+            <p class="text-xs sm:text-sm text-ash-300 leading-relaxed max-w-md mx-auto mb-6">
+              Available now for immediate store pickup or speedy All India door delivery with 1-click WhatsApp order confirmation.
+            </p>
+
+            <!-- Price & Action CTA Box -->
+            <div class="bg-white/10 backdrop-blur-xl p-5 rounded-3xl border border-white/20 shadow-2xl max-w-md mx-auto">
+              <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/15">
+                <div class="text-left">
+                  <div class="text-[10px] font-bold uppercase tracking-wider text-ash-400">Special Price</div>
+                  <div class="text-2xl font-black text-white font-display">₹2,999 <span class="text-xs line-through text-ash-400 font-normal">₹4,499</span></div>
+                </div>
+                <span class="text-xs font-black text-white bg-ash-950 px-3 py-1 rounded-full border border-ash-700">
+                  33% OFF
+                </span>
+              </div>
+
+              <!-- Available Sizes Chips -->
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold text-ash-300">Sizes in Stock:</span>
+                <div class="flex items-center gap-1.5 text-xs font-black">
+                  <span class="px-2 py-0.5 rounded-lg bg-white text-ash-950">UK 7</span>
+                  <span class="px-2 py-0.5 rounded-lg bg-white text-ash-950">UK 8</span>
+                  <span class="px-2 py-0.5 rounded-lg bg-white text-ash-950">UK 9</span>
+                  <span class="px-2 py-0.5 rounded-lg bg-white text-ash-950">UK 10</span>
+                  <span class="px-2 py-0.5 rounded-lg bg-white text-ash-950">UK 11</span>
+                </div>
+              </div>
+
+              <!-- WhatsApp & Cart Buttons -->
+              <div class="flex flex-col sm:flex-row gap-2.5">
+                <a 
+                  href="https://wa.me/917907073737?text=Hello%20DUNK%20%26%20WOKE%20Shoe%20Store!%20I%20would%20like%20to%20order%20the%20Nike%20Air%20Force%201%20Low%20(White%20%2F%20Ash)%20featured%20on%20your%20site!" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="flex-1 py-3 px-4 rounded-full bg-white hover:bg-ash-100 text-ash-950 font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl transition transform hover:-translate-y-0.5"
+                >
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                  <span>Order on WhatsApp</span>
+                </a>
+                <button 
+                  type="button"
+                  onclick="openSizeGuideModal(8)" 
+                  class="py-3 px-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm border border-white/20 transition flex items-center justify-center gap-1.5"
+                >
+                  <i data-lucide="ruler" class="w-4 h-4 text-ash-300"></i>
+                  <span>Size Guide</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- BOTTOM STICKY BAR: CHAPTER TIMELINE & SCROLL PROGRESS -->
+        <div class="relative z-30 pb-6 px-4 sm:px-8 max-w-7xl mx-auto w-full flex items-center justify-between text-xs pointer-events-auto">
+          
+          <!-- Chapter Indicator & Timeline -->
+          <div class="flex items-center gap-3 sm:gap-6">
+            <button type="button" onclick="scrollToScrollyChapter(1)" id="timelineDot1" class="flex items-center gap-2 font-bold text-white transition">
+              <span class="w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_10px_white]"></span>
+              <span class="hidden sm:inline">01 ICON</span>
+            </button>
+            <div class="w-4 sm:w-10 h-0.5 bg-white/20"></div>
+            <button type="button" onclick="scrollToScrollyChapter(2)" id="timelineDot2" class="flex items-center gap-2 font-semibold text-ash-500 hover:text-white transition">
+              <span class="w-2.5 h-2.5 rounded-full bg-ash-700"></span>
+              <span class="hidden sm:inline">02 CRAFT</span>
+            </button>
+            <div class="w-4 sm:w-10 h-0.5 bg-white/20"></div>
+            <button type="button" onclick="scrollToScrollyChapter(3)" id="timelineDot3" class="flex items-center gap-2 font-semibold text-ash-500 hover:text-white transition">
+              <span class="w-2.5 h-2.5 rounded-full bg-ash-700"></span>
+              <span class="hidden sm:inline">03 AIR SOLE</span>
+            </button>
+            <div class="w-4 sm:w-10 h-0.5 bg-white/20"></div>
+            <button type="button" onclick="scrollToScrollyChapter(4)" id="timelineDot4" class="flex items-center gap-2 font-semibold text-ash-500 hover:text-white transition">
+              <span class="w-2.5 h-2.5 rounded-full bg-ash-700"></span>
+              <span class="hidden sm:inline">04 GET PAIR</span>
+            </button>
+          </div>
+
+          <!-- Real-time Percentage Counter -->
+          <div class="flex items-center gap-2 font-mono text-[11px] text-ash-400">
+            <span id="scrollyPercentage">0%</span>
+            <span>EXPLORED</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STORE HIGHLIGHTS TICKER / CATEGORIES BAR -->
+  <section class="bg-[#161716] border-y border-white/10 py-6 px-4">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-6 text-sm">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-white/10 text-white border border-white/15 flex items-center justify-center">
+          <i data-lucide="shield-check" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-white text-sm">Authentic Quality</h4>
+          <p class="text-xs text-ash-400">Premium footwear guaranteed</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-white/10 text-white border border-white/15 flex items-center justify-center">
+          <i data-lucide="truck" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-white text-sm">All India Delivery</h4>
+          <p class="text-xs text-ash-400">Safe & speedy doorstep dispatch</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-white/10 text-white border border-white/15 flex items-center justify-center">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-white text-sm">WhatsApp Assistance</h4>
+          <p class="text-xs text-ash-400">Direct chat with store owners</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-white/10 text-white border border-white/15 flex items-center justify-center">
+          <i data-lucide="map-pin" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-white text-sm">Physical Store</h4>
+          <p class="text-xs text-ash-400">Koduvally, Calicut, Kerala</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY FILTER TABS -->
+  <section id="categories-section" class="pt-12 sm:pt-16 pb-6 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <span class="text-xs uppercase font-extrabold tracking-wider text-white bg-white/10 px-3.5 py-1 rounded-full border border-white/20">
+          Featured Collections
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-display mt-2">
+          Explore by Category
+        </h2>
+        <p class="text-ash-400 text-sm mt-1">
+          Formals, Sandals, Women's footwear &amp; Everyday Sneakers
+        </p>
+      </div>
+
+      <!-- Filter Pills -->
+      <div class="flex flex-wrap items-center gap-2">
+        <button 
+          onclick="setCategory('all')" 
+          data-category="all"
+          class="category-pill active px-4 py-2 rounded-full text-xs font-bold border border-white bg-white text-ash-950 transition"
+        >
+          All Shoes
+        </button>
+        <button 
+          onclick="setCategory('stock')" 
+          data-category="stock"
+          class="category-pill px-4 py-2 rounded-full text-xs font-extrabold border border-white/20 bg-white/10 hover:bg-white/20 text-white transition flex items-center gap-1.5"
+        >
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          🔥 Available Stock (Calicut)
+        </button>
+        <button 
+          onclick="setCategory('sneakers')" 
+          data-category="sneakers"
+          class="category-pill px-4 py-2 rounded-full text-xs font-bold border border-white/15 bg-white/10 hover:bg-white/20 text-ash-200 hover:text-white transition"
+        >
+          Sneakers ⚡
+        </button>
+        <button 
+          onclick="setCategory('formals')" 
+          data-category="formals"
+          class="category-pill px-4 py-2 rounded-full text-xs font-bold border border-white/15 bg-white/10 hover:bg-white/20 text-ash-200 hover:text-white transition"
+        >
+          Formals 👞
+        </button>
+        <button 
+          onclick="setCategory('sandals')" 
+          data-category="sandals"
+          class="category-pill px-4 py-2 rounded-full text-xs font-bold border border-white/15 bg-white/10 hover:bg-white/20 text-ash-200 hover:text-white transition"
+        >
+          Sandals 👡
+        </button>
+        <button 
+          onclick="setCategory('women')" 
+          data-category="women"
+          class="category-pill px-4 py-2 rounded-full text-xs font-bold border border-white/15 bg-white/10 hover:bg-white/20 text-ash-200 hover:text-white transition"
+        >
+          Women 👟
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR POPULAR PRODUCTS -->
+  <section id="popular-products" class="pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-display">
+          Our Popular Products
+        </h2>
+        <p class="text-xs sm:text-sm text-ash-400 mt-0.5">Top-selling pairs loved by customers across Kerala &amp; India</p>
+      </div>
+
+      <button 
+        onclick="resetFilters()" 
+        class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-white hover:text-white transition px-3.5 py-1.5 rounded-full border border-white/20 hover:border-white/40 bg-white/10 hover:bg-white/20"
+      >
+        <span>Explore More</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+      </button>
+    </div>
+
+    <!-- Dynamic Product Cards Grid -->
+    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <!-- Injected by app.js -->
+    </div>
+  </section>
+
+  <!-- BEST SHOES COLLECTION & PROMO BANNERS (Exact replication of Reference Image 1) -->
+  <section id="best-collection" class="pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-display">
+          Best Shoes Collection
+        </h2>
+        <p class="text-xs sm:text-sm text-ash-400 mt-0.5">Handpicked premium styles for athletics, celebrations, and lifestyle</p>
+      </div>
+
+      <a 
+        href="#popular-products" 
+        class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-white hover:text-white transition px-3.5 py-1.5 rounded-full border border-white/20 hover:border-white/40 bg-white/10 hover:bg-white/20"
+      >
+        <span>Explore More</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+
+    <!-- 3-Banner Grid matching Image 1 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Card 1: Sports / Athlete -->
+      <div class="promo-card h-80 bg-ash-950 border border-ash-800 group">
+        <img 
+          src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=700&auto=format&fit=crop&q=80" 
+          alt="Basketball Athlete" 
+          class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+        />
+        <div class="absolute bottom-6 left-6 right-6 z-10 text-white">
+          <span class="text-[10px] font-extrabold uppercase tracking-widest text-white bg-ash-900/90 px-2.5 py-0.5 rounded border border-ash-700 backdrop-blur">Performance</span>
+          <h3 class="text-xl font-bold font-display mt-2">Engineered For The Game</h3>
+          <p class="text-xs text-ash-300 mt-1 mb-3">High-traction grip & lightweight bounce.</p>
+          <a href="#popular-products" onclick="setCategory('sneakers')" class="inline-flex items-center gap-1 text-xs font-bold text-white hover:text-ash-300 transition">
+            View Sneakers <i data-lucide="arrow-right" class="w-3 h-3"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: SIGN UP & GET 25% OFF Promo Banner -->
+      <div class="promo-card h-80 bg-ash-900 border border-ash-700 group">
+        <img 
+          src="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=700&auto=format&fit=crop&q=80" 
+          alt="Dunk Sneaker Stack" 
+          class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition duration-500"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-ash-950 via-ash-900/90 to-transparent flex flex-col justify-center items-center text-center p-6 z-10">
+          <span class="bg-white text-ash-950 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider mb-2 shadow-sm">
+            VIP Community
+          </span>
+          <h3 class="text-2xl sm:text-3xl font-black text-white font-display leading-tight mb-2">
+            SIGN UP &amp; GET<br /><span class="text-white">25% OFF</span>
+          </h3>
+          <p class="text-xs text-ash-300 max-w-xs mb-5">
+            Join our exclusive WhatsApp Community for flash drops, exclusive discount coupons, and new stock alerts!
+          </p>
+          <a 
+            href="https://chat.whatsapp.com/leRRgxWOAYx1XZcXuUNh" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="px-5 py-2.5 rounded-full bg-white hover:bg-ash-100 text-ash-950 font-black text-xs flex items-center gap-2 shadow-xl shadow-black/30 transition transform hover:scale-105"
+          >
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Join WhatsApp Group</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3: Shoes Showcase & Styling -->
+      <div class="promo-card h-80 bg-ash-950 border border-ash-800 group">
+        <img 
+          src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=700&auto=format&fit=crop&q=80" 
+          alt="Footwear Showcase" 
+          class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+        />
+        <div class="absolute bottom-6 left-6 right-6 z-10 text-white">
+          <span class="text-[10px] font-extrabold uppercase tracking-widest text-white bg-ash-900/90 px-2.5 py-0.5 rounded border border-ash-700 backdrop-blur">Formals &amp; Casuals</span>
+          <h3 class="text-xl font-bold font-display mt-2">Everyday Elegance</h3>
+          <p class="text-xs text-ash-300 mt-1 mb-3">Designed for office, weddings &amp; weekends.</p>
+          <a href="#popular-products" onclick="setCategory('formals')" class="inline-flex items-center gap-1 text-xs font-bold text-white hover:text-ash-300 transition">
+            View Formals <i data-lucide="arrow-right" class="w-3 h-3"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STORE LOCATION, ADDRESS & CONTACT SECTION (Concrete Ash & Pure White Theme) -->
+  <section id="store-contact" class="bg-[#181a18] text-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-t border-ash-800">
+    <div class="max-w-6xl mx-auto relative z-10">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs uppercase font-extrabold tracking-wider text-white bg-ash-800/80 px-3.5 py-1 rounded-full border border-ash-600">
+          Visit Us or Order Online
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-display mt-3 text-white">
+          Connect with DUNK, WOKE Shoe Store
+        </h2>
+        <p class="text-ash-300 text-sm mt-2">
+          Experience our shoes in person at Koduvally, Calicut or order via WhatsApp with swift All India Delivery.
+        </p>
+      </div>
+
+      <!-- Contact Action Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        
+        <!-- Google Maps Location Card -->
+        <a 
+          href="https://maps.app.goo.gl/HjKkXckXKGd3jq7JA?g_st=ic" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="bg-[#242624]/90 hover:bg-[#2c2e2c] border border-ash-700/80 hover:border-ash-400 rounded-2xl p-6 transition flex flex-col justify-between group"
+        >
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-ash-800 text-white flex items-center justify-center mb-4 group-hover:scale-110 transition border border-ash-600">
+              <i data-lucide="map-pin" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bold text-base text-white mb-1">Store Location</h3>
+            <p class="text-xs text-ash-300">📍 KODUVALLY, Calicut, Kerala, India</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-ash-700/80 flex items-center text-xs font-bold text-white group-hover:text-ash-200">
+            <span>Open in Google Maps</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5 ml-1"></i>
+          </div>
+        </a>
+
+        <!-- WhatsApp Chat Card -->
+        <a 
+          href="https://wa.me/917907073737?text=Hello%20DUNK%20%26%20WOKE%20Shoe%20Store!%20I%20would%20like%20to%20inquire%20about%20your%20shoes." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="bg-[#242624]/90 hover:bg-[#2c2e2c] border border-ash-700/80 hover:border-ash-400 rounded-2xl p-6 transition flex flex-col justify-between group"
+        >
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-ash-800 text-white flex items-center justify-center mb-4 group-hover:scale-110 transition border border-ash-600">
+              <i data-lucide="message-circle" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bold text-base text-white mb-1">WhatsApp Chat 💬</h3>
+            <p class="text-xs text-ash-300">wa.me/917907073737</p>
+            <p class="text-[11px] text-ash-400 mt-1">Instant order &amp; stock enquiry</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-ash-700/80 flex items-center text-xs font-bold text-white group-hover:text-ash-200">
+            <span>Start Direct Chat</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+          </div>
+        </a>
+
+        <!-- WhatsApp Group Card -->
+        <a 
+          href="https://chat.whatsapp.com/leRRgxWOAYx1XZcXuUNh" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="bg-[#242624]/90 hover:bg-[#2c2e2c] border border-ash-700/80 hover:border-ash-400 rounded-2xl p-6 transition flex flex-col justify-between group"
+        >
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-ash-800 text-white flex items-center justify-center mb-4 group-hover:scale-110 transition border border-ash-600">
+              <i data-lucide="users" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bold text-base text-white mb-1">WhatsApp Group</h3>
+            <p class="text-xs text-ash-300">chat.whatsapp.com</p>
+            <p class="text-[11px] text-ash-400 mt-1">Get 25% OFF offers &amp; first look</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-ash-700/80 flex items-center text-xs font-bold text-white group-hover:text-ash-200">
+            <span>Join Community</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5 ml-1"></i>
+          </div>
+        </a>
+
+        <!-- Phone & Instagram Card -->
+        <div class="bg-[#242624]/90 border border-ash-700/80 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-ash-800 text-white flex items-center justify-center mb-4 border border-ash-600">
+              <i data-lucide="phone-call" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bold text-base text-white mb-1">Direct Call &amp; IG</h3>
+            <p class="text-xs text-ash-200 font-semibold mb-2">📞 7034 677 538</p>
+            <a 
+              href="https://instagram.com/dunk.shoestore" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 text-xs text-ash-300 hover:text-white transition"
+            >
+              <i data-lucide="instagram" class="w-3.5 h-3.5"></i> @dunk.shoestore
+            </a>
+          </div>
+          <div class="mt-4 pt-4 border-t border-ash-700/80">
+            <span class="text-[11px] text-ash-300 font-bold flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+              All India Delivery Active
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Interactive Map Banner Box -->
+      <div class="bg-[#242624] border border-ash-700 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-ash-800 border border-ash-600 text-white flex items-center justify-center flex-shrink-0">
+            <i data-lucide="compass" class="w-7 h-7"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-white">Visiting our store in Koduvally?</h3>
+            <p class="text-ash-300 text-xs sm:text-sm mt-1">Get precise turn-by-turn driving directions on Google Maps.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <a 
+            href="https://maps.app.goo.gl/HjKkXckXKGd3jq7JA?g_st=ic" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="px-5 py-2.5 rounded-full bg-white hover:bg-ash-100 text-ash-950 font-black text-xs sm:text-sm transition flex items-center gap-2 shadow-lg shadow-black/25"
+          >
+            <i data-lucide="map" class="w-4 h-4"></i>
+            <span>Google Maps Route</span>
+          </a>
+          <a 
+            href="tel:+917034677538" 
+            class="px-5 py-2.5 rounded-full bg-ash-800 hover:bg-ash-700 text-white font-bold text-xs sm:text-sm border border-ash-600 transition flex items-center gap-2"
+          >
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            <span>Call 7034 677 538</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT STORE / BRAND STORY (Dark Ash Luxury Boutique Theme) -->
+  <section id="about-section" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <div class="lg:col-span-5 relative">
+        <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/15">
+          <img 
+            src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&auto=format&fit=crop&q=80" 
+            alt="Craftsmanship Footwear" 
+            class="w-full h-80 sm:h-96 object-cover"
+          />
+        </div>
+        <div class="absolute -bottom-6 -right-6 bg-[#161716] text-white p-5 rounded-2xl shadow-2xl max-w-xs border border-white/15 hidden sm:block">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-8 h-8 rounded-full overflow-hidden bg-white p-0.5 border border-white/40">
+              <img src="assets/images/dunk-logo-zoomed.png" alt="DUNK Logo" class="w-full h-full object-contain" />
+            </div>
+            <div class="w-8 h-8 rounded-full overflow-hidden bg-white p-0.5 border border-white/30">
+              <img src="assets/images/favicon-180.png" alt="WOKE Logo" class="w-full h-full object-contain" />
+            </div>
+            <span class="font-extrabold text-white text-lg font-display">DUNK &amp; WOKE</span>
+          </div>
+          <div class="text-xs text-ash-400">Formals • Sandals • Women • Sneakers</div>
+          <div class="text-[11px] text-ash-300 font-semibold mt-1">📍 Koduvally, Calicut</div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <span class="text-xs uppercase font-extrabold tracking-wider text-white bg-white/10 px-3.5 py-1 rounded-full border border-white/20">
+          About DUNK, WOKE Shoe Store
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display mt-3 mb-5">
+          Curated Footwear Built for Comfort and Timeless Style
+        </h2>
+        <p class="text-ash-300 text-sm sm:text-base leading-relaxed mb-4">
+          At **DUNK, WOKE Shoe Store** (`@dunk.shoestore`), based in Koduvally, Calicut, we bring you the finest collection of handcrafted formal shoes, ergonomic daily sandals, chic women's footwear, and high-energy sneakers.
+        </p>
+        <p class="text-ash-400 text-sm sm:text-base leading-relaxed mb-6">
+          Every pair is thoroughly tested for cushioning, sole longevity, and silhouette elegance. Whether you're attending a traditional wedding in Kerala, heading to the office, or stepping out casually, DUNK &amp; WOKE ensures you always step with supreme confidence.
+        </p>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-4 rounded-2xl bg-[#181918] border border-white/10">
+            <h4 class="font-bold text-white text-sm flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Seamless WhatsApp Orders
+            </h4>
+            <p class="text-xs text-ash-400 mt-1">Chat directly, verify sizing, and get tracked door delivery.</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-[#181918] border border-white/10">
+            <h4 class="font-bold text-white text-sm flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Pan-India Shipping
+            </h4>
+            <p class="text-xs text-ash-400 mt-1">Safe express courier straight to your doorstep across India.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER (Concrete Ash & Pure White Theme) -->
+  <footer class="bg-[#121312] text-ash-400 text-xs py-14 px-4 sm:px-6 lg:px-8 border-t border-ash-800">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+      
+      <!-- Brand column -->
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <!-- Dual Brand Logos in Footer -->
+          <div class="flex items-center -space-x-1.5">
+            <div class="w-10 h-10 rounded-full overflow-hidden bg-white p-0.5 border-2 border-ash-700">
+              <img src="assets/images/dunk-logo-zoomed.png" alt="DUNK Logo" class="w-full h-full object-contain" />
+            </div>
+            <div class="w-10 h-10 rounded-full overflow-hidden bg-white p-0.5 border-2 border-ash-400">
+              <img src="assets/images/favicon-180.png" alt="WOKE Logo" class="w-full h-full object-contain" />
+            </div>
+          </div>
+          <div>
+            <span class="font-black text-xl text-white font-display tracking-tight flex items-center gap-1">
+              DUNK <span class="text-ash-400">&amp;</span> WOKE
+            </span>
+            <div class="text-[10px] uppercase font-bold text-ash-400">Shoe Store • Calicut</div>
+          </div>
+        </div>
+        <p class="text-ash-400 text-xs leading-relaxed max-w-sm mb-4">
+          Walk with Style, Step with Confidence. Premium formal shoes, ergonomic sandals, trendsetting women's styles, and street sneakers.
+        </p>
+        <div class="flex items-center gap-3">
+          <a href="https://instagram.com/dunk.shoestore" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-ash-800 hover:bg-white hover:text-ash-950 text-ash-300 flex items-center justify-center transition border border-ash-700" title="Instagram">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+          <a href="https://wa.me/917907073737" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-ash-800 hover:bg-white hover:text-ash-950 text-ash-300 flex items-center justify-center transition border border-ash-700" title="WhatsApp Chat">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+          </a>
+          <a href="https://chat.whatsapp.com/leRRgxWOAYx1XZcXuUNh" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-ash-800 hover:bg-white hover:text-ash-950 text-ash-300 flex items-center justify-center transition border border-ash-700" title="WhatsApp Group">
+            <i data-lucide="users" class="w-4 h-4"></i>
+          </a>
+          <a href="https://maps.app.goo.gl/HjKkXckXKGd3jq7JA?g_st=ic" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-ash-800 hover:bg-white hover:text-ash-950 text-ash-300 flex items-center justify-center transition border border-ash-700" title="Google Maps">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Categories Links -->
+      <div>
+        <h4 class="font-bold text-white text-sm mb-3">Categories</h4>
+        <ul class="space-y-2">
+          <li><button onclick="setCategory('stock')" class="text-white hover:text-ash-300 transition text-left font-semibold">Available Stock</button></li>
+          <li><button onclick="setCategory('formals')" class="hover:text-white transition text-left">Formal Shoes</button></li>
+          <li><button onclick="setCategory('sandals')" class="hover:text-white transition text-left">Sandals &amp; Slides</button></li>
+          <li><button onclick="setCategory('women')" class="hover:text-white transition text-left">Women's Collection</button></li>
+          <li><button onclick="setCategory('sneakers')" class="hover:text-white transition text-left">Sneakers &amp; Kicks</button></li>
+          <li><button onclick="setCategory('all')" class="hover:text-white transition text-left">All Products</button></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-bold text-white text-sm mb-3">Customer Service</h4>
+        <ul class="space-y-2">
+          <li><a href="#popular-products" class="hover:text-white transition">How to Order</a></li>
+          <li><a href="https://chat.whatsapp.com/leRRgxWOAYx1XZcXuUNh" target="_blank" class="text-white hover:text-ash-300 transition">VIP 25% OFF Group</a></li>
+          <li><a href="#store-contact" class="hover:text-white transition">Shipping &amp; Delivery</a></li>
+          <li><a href="https://wa.me/917907073737" target="_blank" class="hover:text-white transition">Size Exchange Inquiry</a></li>
+          <li><a href="https://maps.app.goo.gl/HjKkXckXKGd3jq7JA?g_st=ic" target="_blank" class="hover:text-white transition">Store Locator</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h4 class="font-bold text-white text-sm mb-3">Store Details</h4>
+        <p class="text-xs text-ash-300 mb-1 font-semibold">📍 KODUVALLY, Calicut, Kerala</p>
+        <p class="text-xs text-ash-400 mb-2">📬 All India Delivery</p>
+        <p class="text-xs text-white font-bold mb-1">📞 7034 677 538</p>
+        <p class="text-xs text-ash-300 font-bold mb-3">💬 WhatsApp: 917907073737</p>
+        <p class="text-[11px] text-ash-500">Instagram: @dunk.shoestore</p>
+      </div>
+
+    </div>
+
+    <div class="max-w-6xl mx-auto pt-8 border-t border-ash-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-ash-500">
+      <div>
+        © 2026 DUNK, WOKE Shoe Store (@dunk.shoestore). All rights reserved.
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="admin.html" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1.5 transition">
+          <i data-lucide="shield" class="w-3.5 h-3.5"></i> Admin Stock Portal
+        </a>
+        <span>•</span>
+        <span>Koduvally, Calicut</span>
+        <span>•</span>
+        <span>Kerala, India</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON (Concrete Ash & Pure White) -->
+  <a 
+    href="https://wa.me/917907073737?text=Hello%20DUNK%20%26%20WOKE%20Shoe%20Store!%20I%20want%20to%20place%20an%20order." 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="whatsapp-pulse fixed bottom-6 right-6 z-40 bg-ash-950 hover:bg-black text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 border-2 border-ash-600"
+    title="Chat with us on WhatsApp"
+  >
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+  </a>
+
+  <!-- QUICK VIEW PRODUCT MODAL (Dark Ash Luxury Boutique Theme) -->
+  <div id="quickViewModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <!-- Backdrop -->
+    <div onclick="closeQuickView()" class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"></div>
+    
+    <!-- Modal Dialog -->
+    <div class="relative z-10 bg-[#181918] rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-white/15 text-white overflow-hidden max-h-[90vh] overflow-y-auto">
+      <button onclick="closeQuickView()" class="absolute top-5 right-5 text-ash-400 hover:text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 items-center">
+        <!-- Shoe Image -->
+        <div class="rounded-2xl bg-[#222422] p-6 flex items-center justify-center h-64 sm:h-72 border border-white/10">
+          <img id="qvImage" src="" alt="Shoe Preview" class="max-h-full max-w-full object-contain filter drop-shadow-md" />
+        </div>
+
+        <!-- Shoe Details -->
+        <div>
+          <span id="qvCategory" class="text-xs uppercase font-extrabold tracking-wider text-white bg-white/10 px-3 py-1 rounded-full border border-white/20"></span>
+          <h3 id="qvName" class="text-2xl font-black text-white font-display mt-2 mb-2"></h3>
+          
+          <div class="flex items-baseline gap-2 mb-3">
+            <span id="qvPrice" class="text-2xl font-black text-white"></span>
+            <span id="qvOriginalPrice" class="text-sm text-ash-400 line-through"></span>
+            <span class="text-xs font-bold text-white bg-white/10 px-2.5 py-0.5 rounded border border-white/20">All India Delivery</span>
+          </div>
+
+          <p id="qvDescription" class="text-xs sm:text-sm text-ash-300 mb-4 leading-relaxed"></p>
+
+          <!-- Color Swatches -->
+          <div class="mb-4">
+            <div class="text-xs font-bold text-ash-300 mb-1.5">Available Colors:</div>
+            <div id="qvColors" class="flex items-center gap-2"></div>
+          </div>
+
+          <!-- Size Selector (UK) -->
+          <div class="mb-6">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-xs font-bold text-ash-300">Select UK Size:</span>
+              <button type="button" onclick="openSizeGuideModal()" class="text-[11px] font-bold text-white hover:text-ash-200 underline underline-offset-2 flex items-center gap-1 cursor-pointer">
+                <i data-lucide="ruler" class="w-3.5 h-3.5 text-ash-400"></i> Size Guide &amp; Converter
+              </button>
+            </div>
+            <div id="qvSizes" class="flex flex-wrap gap-2"></div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col gap-2.5">
+            <button 
+              id="qvWhatsAppBtn"
+              type="button"
+              onclick="orderQuickViewOnWhatsApp()" 
+              class="w-full py-3.5 bg-white hover:bg-ash-100 text-ash-950 rounded-full font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl shadow-black/40 transition transform hover:-translate-y-0.5"
+            >
+              <i data-lucide="message-circle" class="w-4 h-4 fill-current"></i>
+              <span>Order Instantly on WhatsApp</span>
+            </button>
+            <button 
+              id="qvAddToCartBtn"
+              type="button"
+              onclick="addQuickViewToCart()" 
+              class="w-full py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-full font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition"
+            >
+              <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE-OVER SHOPPING CART DRAWER (Dark Ash Luxury Boutique Theme) -->
+  <div id="cartBackdrop" onclick="closeCart()" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm drawer-backdrop"></div>
+  <aside id="cartDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-md bg-[#161716] text-white shadow-2xl flex flex-col transform translate-x-full drawer-content border-l border-white/10">
+    
+    <!-- Drawer Header -->
+    <div class="p-5 border-b border-white/10 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i data-lucide="shopping-bag" class="w-5 h-5 text-white"></i>
+        <h3 class="font-bold text-white text-lg">Your Cart</h3>
+      </div>
+      <button onclick="closeCart()" class="w-8 h-8 rounded-full hover:bg-white/10 text-ash-400 hover:text-white flex items-center justify-center transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- Empty State -->
+    <div id="cartEmptyState" class="hidden flex-1 flex flex-col items-center justify-center p-8 text-center">
+      <div class="w-16 h-16 bg-white/10 text-ash-300 rounded-full flex items-center justify-center mb-3 border border-white/15">
+        <i data-lucide="shopping-bag" class="w-8 h-8"></i>
+      </div>
+      <h4 class="font-bold text-white text-lg mb-1">Your cart is empty</h4>
+      <p class="text-xs text-ash-400 mb-6">Discover our popular shoes and add your favorite pairs!</p>
+      <button onclick="closeCart()" class="px-6 py-2.5 bg-white text-ash-950 rounded-full font-bold text-xs hover:bg-ash-100 transition shadow-lg">
+        Start Shopping
+      </button>
+    </div>
+
+    <!-- Cart Items Scroll List -->
+    <div id="cartItemsList" class="flex-1 overflow-y-auto p-5 space-y-3">
+      <!-- Items dynamically populated by app.js -->
+    </div>
+
+    <!-- Cart Footer with WhatsApp Checkout -->
+    <div id="cartFooter" class="p-5 border-t border-white/10 bg-[#1b1d1b] space-y-4">
+      <div class="space-y-2">
+        <div class="text-xs font-bold text-ash-300">Quick Delivery Details:</div>
+        <input 
+          id="checkoutName" 
+          type="text" 
+          placeholder="Your Full Name (e.g. Rahul / Muhammed)" 
+          class="w-full px-3.5 py-2.5 rounded-xl border border-white/15 text-xs focus:outline-hidden focus:border-white bg-[#242624] text-white placeholder-ash-400"
+        />
+        <input 
+          id="checkoutCity" 
+          type="text" 
+          placeholder="Delivery Address / City (e.g. Calicut, Kerala)" 
+          class="w-full px-3.5 py-2.5 rounded-xl border border-white/15 text-xs focus:outline-hidden focus:border-white bg-[#242624] text-white placeholder-ash-400"
+        />
+      </div>
+
+      <div class="pt-2 border-t border-white/10 flex items-center justify-between">
+        <span class="font-bold text-ash-400 text-sm">Subtotal:</span>
+        <span id="cartSubtotal" class="font-black text-xl text-white">₹0</span>
+      </div>
+
+      <button 
+        type="button"
+        onclick="checkoutViaWhatsApp()" 
+        class="w-full py-3.5 bg-white hover:bg-ash-100 text-ash-950 font-black text-sm rounded-full flex items-center justify-center gap-2 shadow-xl shadow-black/40 transition transform hover:-translate-y-0.5"
+      >
+        <i data-lucide="message-circle" class="w-5 h-5 fill-current"></i>
+        <span>Checkout via WhatsApp</span>
+      </button>
+
+      <p class="text-center text-[10px] text-ash-400">
+        Orders are verified and confirmed directly by DUNK &amp; WOKE Shoe Store.
+      </p>
+    </div>
+  </aside>
+
+  <!-- WISHLIST MODAL (Dark Ash Luxury Boutique Theme) -->
+  <div id="wishlistModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div onclick="toggleWishlistModal()" class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+    <div class="relative z-10 bg-[#181918] rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-white/15 text-white max-h-[85vh] flex flex-col">
+      <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
+        <div class="flex items-center gap-2">
+          <i data-lucide="heart" class="w-5 h-5 text-rose-500 fill-rose-500"></i>
+          <h3 class="font-bold text-white text-lg">Saved to Wishlist</h3>
+        </div>
+        <button onclick="toggleWishlistModal()" class="w-8 h-8 rounded-full hover:bg-white/10 text-ash-400 hover:text-white flex items-center justify-center transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div id="wishlistItemsContainer" class="flex-1 overflow-y-auto space-y-3">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL (Dark Ash Luxury Boutique Theme) -->
+  <div id="searchModal" class="hidden fixed inset-0 z-50 flex items-start justify-center p-4 pt-20">
+    <div onclick="toggleSearchModal()" class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+    <div class="relative z-10 bg-[#181918] rounded-3xl max-w-xl w-full p-6 shadow-2xl border border-white/15 text-white">
+      <div class="flex items-center gap-3 border-b border-white/10 pb-3 mb-4">
+        <i data-lucide="search" class="w-5 h-5 text-ash-400"></i>
+        <input 
+          id="liveSearchInput" 
+          type="text" 
+          placeholder="Search Formals, Sandals, Women, Sneakers..." 
+          class="flex-1 text-white text-base focus:outline-hidden font-medium bg-transparent placeholder-ash-400"
+        />
+        <button onclick="toggleSearchModal()" class="text-ash-400 hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="flex flex-wrap items-center gap-2 text-xs font-semibold text-ash-400">
+        <span class="text-ash-400">Suggested:</span>
+        <button onclick="handleLiveSearch('Air Force'); toggleSearchModal();" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white transition border border-white/10">Nike Air Force</button>
+        <button onclick="handleLiveSearch('Salomon'); toggleSearchModal();" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white transition border border-white/10">Salomon XT-6</button>
+        <button onclick="handleLiveSearch('Puma'); toggleSearchModal();" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white transition border border-white/10">Puma Palermo</button>
+        <button onclick="handleLiveSearch('Oxford'); toggleSearchModal();" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white transition border border-white/10">Formal Oxford</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE SHOE SIZE GUIDE & CONVERTER MODAL (Dark Ash Luxury Boutique Theme) -->
+  <div id="sizeGuideModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4">
+    <!-- Backdrop -->
+    <div onclick="closeSizeGuideModal()" class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"></div>
+
+    <!-- Modal Content Window -->
+    <div class="relative z-10 bg-[#181918] rounded-3xl max-w-2xl w-full p-5 sm:p-7 shadow-2xl border border-white/15 text-white overflow-hidden max-h-[92vh] flex flex-col">
+      <!-- Header -->
+      <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-white/10 text-white flex items-center justify-center border border-white/15">
+            <i data-lucide="ruler" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-lg sm:text-xl font-black text-white font-display">Shoe Size Guide &amp; Converter</h3>
+            <p class="text-xs text-ash-400 font-medium">Standard Indian / UK sizing with US, EU, and CM chart</p>
+          </div>
+        </div>
+        <button onclick="closeSizeGuideModal()" class="w-8 h-8 rounded-full hover:bg-white/10 text-ash-400 hover:text-white flex items-center justify-center transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Tab Switcher (Men / Women / Measuring Walkthrough) -->
+      <div class="flex items-center gap-1.5 sm:gap-2 p-1 bg-white/5 border border-white/10 rounded-2xl mb-4 text-xs font-bold">
+        <button id="sgTabMen" onclick="switchSizeGuideTab('men')" class="flex-1 py-2 px-2.5 rounded-xl transition bg-white text-ash-950 shadow-xs">
+          Men's / Unisex
+        </button>
+        <button id="sgTabWomen" onclick="switchSizeGuideTab('women')" class="flex-1 py-2 px-2.5 rounded-xl transition text-ash-300 hover:text-white">
+          Women's Shoes
+        </button>
+        <button id="sgTabHowTo" onclick="switchSizeGuideTab('howto')" class="flex-1 py-2 px-2.5 rounded-xl transition text-ash-300 hover:text-white flex items-center justify-center gap-1">
+          <i data-lucide="compass" class="w-3.5 h-3.5"></i> How to Measure
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="flex-1 overflow-y-auto space-y-4 pr-1">
+        
+        <!-- Interactive Live Converter Tool (Visible for Men & Women tabs) -->
+        <div id="sgConverterContainer">
+          <div class="bg-[#202220] p-4 rounded-2xl border border-white/10 mb-4">
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-ash-300">Tap Your UK Size:</span>
+              <span id="sgFittingTip" class="text-[11px] font-bold text-white bg-white/10 px-2.5 py-0.5 rounded-full border border-white/15">Standard Indian Fit</span>
+            </div>
+
+            <!-- Size Selector Pills -->
+            <div id="sgSizeButtons" class="flex flex-wrap gap-2 mb-4">
+              <!-- Dynamically populated buttons -->
+            </div>
+
+            <!-- Live Conversion Display Cards -->
+            <div class="grid grid-cols-4 gap-2 text-center">
+              <div class="bg-[#161716] p-2.5 rounded-xl border border-white/10 shadow-xs">
+                <span class="text-[10px] uppercase font-bold text-ash-400 block mb-0.5">UK (India)</span>
+                <span id="sgValUK" class="text-base sm:text-lg font-black text-white">UK 8</span>
+              </div>
+              <div class="bg-[#161716] p-2.5 rounded-xl border border-white/10 shadow-xs">
+                <span class="text-[10px] uppercase font-bold text-ash-400 block mb-0.5">US</span>
+                <span id="sgValUS" class="text-base sm:text-lg font-black text-white">US 9</span>
+              </div>
+              <div class="bg-[#161716] p-2.5 rounded-xl border border-white/10 shadow-xs">
+                <span class="text-[10px] uppercase font-bold text-ash-400 block mb-0.5">EU</span>
+                <span id="sgValEU" class="text-base sm:text-lg font-black text-white">EU 42</span>
+              </div>
+              <div class="bg-[#161716] p-2.5 rounded-xl border border-white/10 shadow-xs">
+                <span class="text-[10px] uppercase font-bold text-ash-400 block mb-0.5">Foot Length</span>
+                <span id="sgValCM" class="text-sm sm:text-base font-black text-white">26.5 cm</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conversion Comparison Table -->
+          <div class="border border-white/10 rounded-2xl overflow-hidden mb-4">
+            <div class="bg-[#161716] px-4 py-2 border-b border-white/10 flex items-center justify-between text-xs font-bold text-white">
+              <span>Full Size Conversion Table</span>
+              <span class="text-[10px] text-ash-400 font-normal">Click any row to test</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-center text-xs">
+                <thead class="bg-[#202220] text-ash-400 font-bold border-b border-white/10">
+                  <tr>
+                    <th class="py-2 px-3">UK (India)</th>
+                    <th class="py-2 px-3">US Size</th>
+                    <th class="py-2 px-3">EU Size</th>
+                    <th class="py-2 px-3">Foot Length (CM)</th>
+                    <th class="py-2 px-3">Inches</th>
+                  </tr>
+                </thead>
+                <tbody id="sgTableBody" class="divide-y divide-white/10 text-ash-200 font-medium">
+                  <!-- Populated by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Brand Fit Recommendations -->
+          <div class="p-3.5 bg-[#202220] rounded-2xl border border-white/10">
+            <h5 class="text-xs font-bold text-white mb-1.5 flex items-center gap-1.5">
+              <i data-lucide="info" class="w-3.5 h-3.5 text-ash-400"></i> DUNK Sizing Advice:
+            </h5>
+            <ul class="text-[11px] text-ash-300 space-y-1">
+              <li>• <strong>Nike Dunk &amp; Jordan 1</strong>: Fits true to size. If you have wider feet, choose +0.5 UK size.</li>
+              <li>• <strong>Onitsuka Tiger Mexico 66</strong>: True to UK size with snug, flexible arch support.</li>
+              <li>• <strong>Formal Oxfords &amp; Loafers</strong>: Standard UK fit with regular dress socks.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- How to Measure Foot at Home (Step-by-Step Walkthrough) -->
+        <div id="sgHowToContainer" class="hidden space-y-3">
+          <div class="bg-[#202220] p-4 rounded-2xl border border-white/10">
+            <h4 class="font-extrabold text-sm text-white mb-2 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-white text-ash-950 font-bold flex items-center justify-center text-xs">1</span>
+              Place Paper Against Wall
+            </h4>
+            <p class="text-xs text-ash-300 leading-relaxed">
+              Place a blank A4 sheet flat on the floor with the short edge flush against a wall. Stand on the paper with your heel lightly pressing against the wall.
+            </p>
+          </div>
+
+          <div class="bg-[#202220] p-4 rounded-2xl border border-white/10">
+            <h4 class="font-extrabold text-sm text-white mb-2 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-white text-ash-950 font-bold flex items-center justify-center text-xs">2</span>
+              Mark Longest Toe
+            </h4>
+            <p class="text-xs text-ash-300 leading-relaxed">
+              Hold a pencil vertically (straight up and down) and mark the paper at the furthest tip of your longest toe (either your big toe or second toe).
+            </p>
+          </div>
+
+          <div class="bg-[#202220] p-4 rounded-2xl border border-white/10">
+            <h4 class="font-extrabold text-sm text-white mb-2 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-white text-ash-950 font-bold flex items-center justify-center text-xs">3</span>
+              Measure in Centimeters (CM)
+            </h4>
+            <p class="text-xs text-ash-300 leading-relaxed">
+              Measure the distance from the edge of the paper to your mark using a ruler. Match your measurement to the CM column in the table above to find your perfect UK size!
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer WhatsApp Help Link -->
+      <div class="pt-3.5 border-t border-white/10 flex items-center justify-between gap-3 mt-3 bg-[#181918]">
+        <div class="text-[11px] text-ash-400 font-medium truncate">
+          Need personalized fit advice?
+        </div>
+        <a 
+          href="https://wa.me/917907073737?text=Hello%20DUNK%20%26%20WOKE%20Shoe%20Store!%20I%20need%20help%20choosing%20my%20shoe%20size." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="px-4 py-2 bg-white hover:bg-ash-100 text-ash-950 text-xs font-black rounded-full transition flex items-center gap-1.5 shadow-lg whitespace-nowrap"
+        >
+          <i data-lucide="message-circle" class="w-3.5 h-3.5 fill-current"></i>
+          <span>Ask Store on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION POPUP (Concrete Ash & Pure White) -->
+  <div 
+    id="toastNotification" 
+    class="fixed bottom-6 left-1/2 transform -translate-x-1/2 translate-y-24 opacity-0 transition-all duration-300 z-50 bg-ash-950 text-white px-5 py-3 rounded-full shadow-2xl flex items-center gap-2.5 text-xs sm:text-sm font-semibold border border-ash-700 pointer-events-none"
+  >
+    <i data-lucide="check-circle" class="w-4 h-4 text-white"></i>
+    <span id="toastMessage">Action completed!</span>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
